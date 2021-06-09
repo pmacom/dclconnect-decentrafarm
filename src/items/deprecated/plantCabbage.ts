@@ -1,6 +1,6 @@
 import { Waterable } from "src/components/waterable"
 
-export class PlantCabbage extends Waterable {
+export class PlantCabbage extends Entity {
     public interactions: Array<string> = ["waterable"]
 
     private animator: Animator = new Animator()
@@ -8,12 +8,10 @@ export class PlantCabbage extends Waterable {
     private animationStage2: AnimationState
     private animationStage3: AnimationState
     private animationStage4: AnimationState
-    constructor(
-        transform: Transform
-    ) {
+    constructor() {
         super()
         this.addComponent(new GLTFShape('models/plant_cabbage.gltf'))
-        this.addComponent(transform)
+        this.addComponent(new Transform())
         this.addComponent(this.animator)
 
         this.animationStage1 = new AnimationState("Cabbage_Stage1", { looping: false })

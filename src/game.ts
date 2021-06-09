@@ -1,16 +1,11 @@
 import * as utils from '@dcl/ecs-scene-utils'
 import { ItemBucket } from './items/bucket'
-import { PlantCabbage } from './items/plantCabbage'
 import { RaisedBed01 } from './items/raisedBed01'
+import { SeedCabbage } from './items/seeds'
 import { WateringCan } from './items/wateringCan'
-import { SeedCabbage } from './items/seedCabbage'
 
 const bucket1 = new ItemBucket(new Transform({
   position: new Vector3(8,0,8)
-}))
-
-const plantCabbage = new PlantCabbage(new Transform({
-  position: new Vector3(7,0,7)
 }))
 
 const wateringCan = new WateringCan(new Transform({
@@ -21,10 +16,11 @@ const raisedBed01 = new RaisedBed01(new Transform({
   position: new Vector3(2,0,4)
 }))
 
-const seedCabbage = new SeedCabbage(new Transform({
-  position: new Vector3(4,0,5)
-}))
+const seedCabbage = new SeedCabbage()
+seedCabbage.setPosition(new Vector3(4,0,5))
 
+const seedCabbage2 = new SeedCabbage()
+seedCabbage2.setPosition(new Vector3(4,0,6))
 
 
 
