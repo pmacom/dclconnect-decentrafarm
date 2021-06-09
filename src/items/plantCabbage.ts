@@ -1,4 +1,3 @@
-import { InteractibleEntity } from "src/components/interactible"
 import { Waterable } from "src/components/waterable"
 
 export class PlantCabbage extends Waterable {

@@ -45,12 +45,12 @@
         },
         {
             "mesh" : 0,
-            "name" : "wateringCan",
+            "name" : "seedBag_cabbage",
             "rotation" : [
-                0.3763515055179596,
-                -0.5986313819885254,
-                0.5986314415931702,
-                0.3763514459133148
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
             ],
             "scale" : [
                 0.009999999776482582,
@@ -62,7 +62,7 @@
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "GardenProps",
+            "name" : "SeedBag_Cabbage",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -98,66 +98,66 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "props2_Base",
-            "uri" : "textures/props2_Base.png"
+            "name" : "DiffuseColor_Texture",
+            "uri" : "textures/DiffuseColor_Texture.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 465,
+            "count" : 42,
             "max" : [
-                13.709754943847656,
-                26.308801651000977,
-                6.67572021484375e-06
+                0.7941441535949707,
+                4.999999523162842,
+                8.146034247147327e-07
             ],
             "min" : [
-                -13.786495208740234,
-                -47.112457275390625,
-                -44.35725402832031
+                -0.7941441535949707,
+                -5.000002384185791,
+                -15.000000953674316
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 465,
+            "count" : 42,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 465,
+            "count" : 42,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 1266,
+            "count" : 96,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 5580,
+            "byteLength" : 504,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 5580,
-            "byteOffset" : 5580
+            "byteLength" : 504,
+            "byteOffset" : 504
         },
         {
             "buffer" : 0,
-            "byteLength" : 3720,
-            "byteOffset" : 11160
+            "byteLength" : 336,
+            "byteOffset" : 1008
         },
         {
             "buffer" : 0,
-            "byteLength" : 2532,
-            "byteOffset" : 14880
+            "byteLength" : 192,
+            "byteOffset" : 1344
         }
     ],
     "samplers" : [
@@ -168,8 +168,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 17412,
-            "uri" : "wateringCan.bin"
+            "byteLength" : 1536,
+            "uri" : "seed_cabbage.bin"
         }
     ]
 }

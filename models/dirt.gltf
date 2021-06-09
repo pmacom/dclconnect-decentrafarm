@@ -10,7 +10,8 @@
             "nodes" : [
                 0,
                 1,
-                2
+                2,
+                3
             ]
         }
     ],
@@ -45,37 +46,45 @@
         },
         {
             "mesh" : 0,
-            "name" : "wateringCan",
-            "rotation" : [
-                0.3763515055179596,
-                -0.5986313819885254,
-                0.5986314415931702,
-                0.3763514459133148
-            ],
+            "name" : "Base",
             "scale" : [
-                0.009999999776482582,
-                0.009999999776482582,
-                0.009999999776482582
+                0.32499998807907104,
+                0.3220099210739136,
+                0.32499998807907104
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Base_collider",
+            "scale" : [
+                0.32499998807907104,
+                0.3220099210739136,
+                0.32499998807907104
+            ],
+            "translation" : [
+                0,
+                0.013417365029454231,
+                0
             ]
         }
     ],
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "GardenProps",
+            "name" : "Dirt",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
-                "roughnessFactor" : 0.5527864098548889
+                "roughnessFactor" : 0.5
             }
         }
     ],
     "meshes" : [
         {
-            "name" : "Scene",
+            "name" : "Plane",
             "primitives" : [
                 {
                     "attributes" : {
@@ -85,6 +94,19 @@
                     },
                     "indices" : 3,
                     "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Plane.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 3
                 }
             ]
         }
@@ -98,66 +120,109 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "props2_Base",
-            "uri" : "textures/props2_Base.png"
+            "name" : "dirt_Base",
+            "uri" : "textures/dirt_Base.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 465,
+            "count" : 4,
             "max" : [
-                13.709754943847656,
-                26.308801651000977,
-                6.67572021484375e-06
+                1,
+                0,
+                1
             ],
             "min" : [
-                -13.786495208740234,
-                -47.112457275390625,
-                -44.35725402832031
+                -1,
+                0,
+                -1
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 465,
+            "count" : 4,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 465,
+            "count" : 4,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 1266,
+            "count" : 6,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                1,
+                0,
+                1
+            ],
+            "min" : [
+                -1,
+                0,
+                -1
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC2"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 5580,
+            "byteLength" : 48,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 5580,
-            "byteOffset" : 5580
+            "byteLength" : 48,
+            "byteOffset" : 48
         },
         {
             "buffer" : 0,
-            "byteLength" : 3720,
-            "byteOffset" : 11160
+            "byteLength" : 32,
+            "byteOffset" : 96
         },
         {
             "buffer" : 0,
-            "byteLength" : 2532,
-            "byteOffset" : 14880
+            "byteLength" : 12,
+            "byteOffset" : 128
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 140
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 188
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32,
+            "byteOffset" : 236
         }
     ],
     "samplers" : [
@@ -168,8 +233,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 17412,
-            "uri" : "wateringCan.bin"
+            "byteLength" : 268,
+            "uri" : "dirt.bin"
         }
     ]
 }

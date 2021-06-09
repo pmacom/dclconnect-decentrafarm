@@ -1,0 +1,444 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Light",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "raisedBed01",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                -0.3392944931983948,
+                0.30332422256469727,
+                1.0981347560882568
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.001",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                0.367024302482605,
+                0.30332422256469727,
+                1.0981347560882568
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.002",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                -0.3392944931983948,
+                0.30332422256469727,
+                0.3637799918651581
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.003",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                0.367024302482605,
+                0.30332422256469727,
+                0.3637799918651581
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.004",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                -0.3392944931983948,
+                0.30332422256469727,
+                -0.36563774943351746
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.005",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                0.367024302482605,
+                0.30332422256469727,
+                -0.36563774943351746
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.006",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                -0.3392944931983948,
+                0.30332422256469727,
+                -1.0701274871826172
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane.007",
+            "scale" : [
+                0.3220099210739136,
+                0.3220099210739136,
+                0.3220099210739136
+            ],
+            "translation" : [
+                0.367024302482605,
+                0.30332422256469727,
+                -1.0701274871826172
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "RaisedBed",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Soil",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Scene",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Plane",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "props_Base",
+            "uri" : "textures/props_Base.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "dirt_Base",
+            "uri" : "textures/dirt_Base.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 104,
+            "max" : [
+                109.35395812988281,
+                184.38963317871094,
+                1.525297193438746e-05
+            ],
+            "min" : [
+                -109.35393524169922,
+                -184.3182830810547,
+                -39.656402587890625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 104,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 104,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 240,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                75,
+                150.03570556640625,
+                -29.999961853027344
+            ],
+            "min" : [
+                -75,
+                -149.96424865722656,
+                -30.000009536743164
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 6,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                1,
+                0,
+                1
+            ],
+            "min" : [
+                -1,
+                0,
+                -1
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 4,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 6,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1248,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1248,
+            "byteOffset" : 1248
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 832,
+            "byteOffset" : 2496
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 480,
+            "byteOffset" : 3328
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 3808
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 3856
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32,
+            "byteOffset" : 3904
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 3936
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 3948
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 3996
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32,
+            "byteOffset" : 4044
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 4076
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9986
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 4088,
+            "uri" : "raisedBed01.bin"
+        }
+    ]
+}

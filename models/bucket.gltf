@@ -80,8 +80,7 @@
                     "index" : 0,
                     "texCoord" : 0
                 },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.5527864098548889
+                "metallicFactor" : 0
             }
         }
     ],
@@ -124,8 +123,8 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "DiffuseColor_Texture",
-            "uri" : "textures/DiffuseColor_Texture.png"
+            "name" : "props2_Base",
+            "uri" : "textures/props2_Base.png"
         }
     ],
     "accessors" : [

@@ -385,8 +385,8 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "DiffuseColor_Texture-DiffuseColor_Texture",
-            "uri" : "textures/DiffuseColor_Texture-DiffuseColor_Texture.png"
+            "name" : "DiffuseColor_Texture-cabbage_Base",
+            "uri" : "textures/DiffuseColor_Texture-cabbage_Base.png"
         }
     ],
     "accessors" : [
