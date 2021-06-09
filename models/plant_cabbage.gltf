@@ -13,8 +13,7 @@
                 2,
                 3,
                 4,
-                5,
-                6
+                5
             ]
         }
     ],
@@ -106,20 +105,6 @@
                 0,
                 0
             ]
-        },
-        {
-            "mesh" : 4,
-            "name" : "Cube_collider",
-            "scale" : [
-                0.2886369824409485,
-                0.21739958226680756,
-                0.2886369824409485
-            ],
-            "translation" : [
-                0,
-                0.22628241777420044,
-                0
-            ]
         }
     ],
     "animations" : [
@@ -143,14 +128,14 @@
             "name" : "Cabbage_Stage4",
             "samplers" : [
                 {
-                    "input" : 20,
+                    "input" : 16,
                     "interpolation" : "LINEAR",
-                    "output" : 21
+                    "output" : 17
                 },
                 {
-                    "input" : 20,
+                    "input" : 16,
                     "interpolation" : "LINEAR",
-                    "output" : 22
+                    "output" : 18
                 }
             ]
         },
@@ -174,14 +159,14 @@
             "name" : "Cabbage_Stage3",
             "samplers" : [
                 {
-                    "input" : 23,
+                    "input" : 19,
                     "interpolation" : "LINEAR",
-                    "output" : 24
+                    "output" : 20
                 },
                 {
-                    "input" : 23,
+                    "input" : 19,
                     "interpolation" : "LINEAR",
-                    "output" : 25
+                    "output" : 21
                 }
             ]
         },
@@ -205,14 +190,14 @@
             "name" : "Cabbage_Stage2",
             "samplers" : [
                 {
-                    "input" : 26,
+                    "input" : 22,
                     "interpolation" : "LINEAR",
-                    "output" : 27
+                    "output" : 23
                 },
                 {
-                    "input" : 26,
+                    "input" : 22,
                     "interpolation" : "LINEAR",
-                    "output" : 28
+                    "output" : 24
                 }
             ]
         },
@@ -236,57 +221,14 @@
             "name" : "Cabbage_Stage1",
             "samplers" : [
                 {
-                    "input" : 29,
+                    "input" : 25,
                     "interpolation" : "LINEAR",
-                    "output" : 30
+                    "output" : 26
                 },
                 {
-                    "input" : 29,
+                    "input" : 25,
                     "interpolation" : "LINEAR",
-                    "output" : 31
-                }
-            ]
-        },
-        {
-            "channels" : [
-                {
-                    "sampler" : 0,
-                    "target" : {
-                        "node" : 6,
-                        "path" : "translation"
-                    }
-                },
-                {
-                    "sampler" : 1,
-                    "target" : {
-                        "node" : 6,
-                        "path" : "rotation"
-                    }
-                },
-                {
-                    "sampler" : 2,
-                    "target" : {
-                        "node" : 6,
-                        "path" : "scale"
-                    }
-                }
-            ],
-            "name" : "CubeAction",
-            "samplers" : [
-                {
-                    "input" : 32,
-                    "interpolation" : "STEP",
-                    "output" : 33
-                },
-                {
-                    "input" : 32,
-                    "interpolation" : "STEP",
-                    "output" : 34
-                },
-                {
-                    "input" : 32,
-                    "interpolation" : "STEP",
-                    "output" : 35
+                    "output" : 27
                 }
             ]
         }
@@ -359,19 +301,6 @@
                     },
                     "indices" : 15,
                     "material" : 0
-                }
-            ]
-        },
-        {
-            "name" : "Cube",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 16,
-                        "NORMAL" : 17,
-                        "TEXCOORD_0" : 18
-                    },
-                    "indices" : 19
                 }
             ]
         }
@@ -529,40 +458,6 @@
         {
             "bufferView" : 16,
             "componentType" : 5126,
-            "count" : 24,
-            "max" : [
-                0.8919482231140137,
-                0.4794389605522156,
-                0.8893234729766846
-            ],
-            "min" : [
-                -0.9354952573776245,
-                -1,
-                -1.0855692625045776
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 17,
-            "componentType" : 5126,
-            "count" : 24,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 18,
-            "componentType" : 5126,
-            "count" : 24,
-            "type" : "VEC2"
-        },
-        {
-            "bufferView" : 19,
-            "componentType" : 5123,
-            "count" : 36,
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 20,
-            "componentType" : 5126,
             "count" : 39,
             "max" : [
                 6.4
@@ -573,19 +468,19 @@
             "type" : "SCALAR"
         },
         {
-            "bufferView" : 21,
+            "bufferView" : 17,
             "componentType" : 5126,
             "count" : 39,
             "type" : "VEC4"
         },
         {
-            "bufferView" : 22,
+            "bufferView" : 18,
             "componentType" : 5126,
             "count" : 39,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 23,
+            "bufferView" : 19,
             "componentType" : 5126,
             "count" : 78,
             "max" : [
@@ -597,19 +492,19 @@
             "type" : "SCALAR"
         },
         {
-            "bufferView" : 24,
+            "bufferView" : 20,
             "componentType" : 5126,
             "count" : 78,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 25,
+            "bufferView" : 21,
             "componentType" : 5126,
             "count" : 78,
             "type" : "VEC4"
         },
         {
-            "bufferView" : 26,
+            "bufferView" : 22,
             "componentType" : 5126,
             "count" : 78,
             "max" : [
@@ -621,19 +516,19 @@
             "type" : "SCALAR"
         },
         {
-            "bufferView" : 27,
+            "bufferView" : 23,
             "componentType" : 5126,
             "count" : 78,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 28,
+            "bufferView" : 24,
             "componentType" : 5126,
             "count" : 78,
             "type" : "VEC4"
         },
         {
-            "bufferView" : 29,
+            "bufferView" : 25,
             "componentType" : 5126,
             "count" : 80,
             "max" : [
@@ -645,46 +540,16 @@
             "type" : "SCALAR"
         },
         {
-            "bufferView" : 30,
+            "bufferView" : 26,
             "componentType" : 5126,
             "count" : 80,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 31,
+            "bufferView" : 27,
             "componentType" : 5126,
             "count" : 80,
             "type" : "VEC4"
-        },
-        {
-            "bufferView" : 32,
-            "componentType" : 5126,
-            "count" : 1,
-            "max" : [
-                6.76
-            ],
-            "min" : [
-                6.76
-            ],
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 33,
-            "componentType" : 5126,
-            "count" : 1,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 34,
-            "componentType" : 5126,
-            "count" : 1,
-            "type" : "VEC4"
-        },
-        {
-            "bufferView" : 35,
-            "componentType" : 5126,
-            "count" : 1,
-            "type" : "VEC3"
         }
     ],
     "bufferViews" : [
@@ -770,103 +635,63 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 288,
+            "byteLength" : 156,
             "byteOffset" : 53976
         },
         {
             "buffer" : 0,
-            "byteLength" : 288,
-            "byteOffset" : 54264
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 192,
-            "byteOffset" : 54552
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 72,
-            "byteOffset" : 54744
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 156,
-            "byteOffset" : 54816
-        },
-        {
-            "buffer" : 0,
             "byteLength" : 624,
-            "byteOffset" : 54972
+            "byteOffset" : 54132
         },
         {
             "buffer" : 0,
             "byteLength" : 468,
-            "byteOffset" : 55596
+            "byteOffset" : 54756
         },
         {
             "buffer" : 0,
             "byteLength" : 312,
-            "byteOffset" : 56064
+            "byteOffset" : 55224
         },
         {
             "buffer" : 0,
             "byteLength" : 936,
-            "byteOffset" : 56376
+            "byteOffset" : 55536
         },
         {
             "buffer" : 0,
             "byteLength" : 1248,
-            "byteOffset" : 57312
+            "byteOffset" : 56472
         },
         {
             "buffer" : 0,
             "byteLength" : 312,
-            "byteOffset" : 58560
+            "byteOffset" : 57720
         },
         {
             "buffer" : 0,
             "byteLength" : 936,
-            "byteOffset" : 58872
+            "byteOffset" : 58032
         },
         {
             "buffer" : 0,
             "byteLength" : 1248,
-            "byteOffset" : 59808
+            "byteOffset" : 58968
         },
         {
             "buffer" : 0,
             "byteLength" : 320,
-            "byteOffset" : 61056
+            "byteOffset" : 60216
         },
         {
             "buffer" : 0,
             "byteLength" : 960,
-            "byteOffset" : 61376
+            "byteOffset" : 60536
         },
         {
             "buffer" : 0,
             "byteLength" : 1280,
-            "byteOffset" : 62336
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 4,
-            "byteOffset" : 63616
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 63620
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 16,
-            "byteOffset" : 63632
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12,
-            "byteOffset" : 63648
+            "byteOffset" : 61496
         }
     ],
     "samplers" : [
@@ -877,7 +702,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 63660,
+            "byteLength" : 62776,
             "uri" : "plant_cabbage.bin"
         }
     ]

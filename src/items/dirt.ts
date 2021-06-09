@@ -29,18 +29,20 @@ export class Dirt extends DirtSpot {
 
     water() {
         log('I have been watered! YAY!')
-        this.debugText.value = "Watered!"
+        this.debugText.value = this.plantType ? `${this.plantType} Watered!` : 'Wet Soil'
     }
 
     plant(plantType: string) {
-        if(!this.plantEntity && plantTypes && plantTypes[plantType]){
+        if(!this.hasPlant && plantTypes && plantTypes[plantType]){
             this.plantEntity = new plantTypes[plantType]()
             if(this.plantEntity){
                 log(this.plantEntity)
                 this.plantEntity.setParent(this)
-                this.plantEntity.setPosition(new Vector3(0,1,0))
+                this.plantEntity.setPosition(new Vector3(0,0,0))
                 log('I am going to plant something!')
-                this.debugText.value = "Planted!"
+                this.debugText.value = `${plantType} Planted!`
+                this.hasPlant = true
+                this.plantType = plantType
             }
         }
         // log('I am going to plant something!')

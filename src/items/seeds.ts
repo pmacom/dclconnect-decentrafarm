@@ -28,6 +28,7 @@ export abstract class Seeds extends HoldableEntity {
     setPosition(position: Vector3){
         this.init()
         this.getComponentOrCreate(Transform).position = position
+        this.getComponentOrCreate(Transform).scale = new Vector3(2,2,2)
         if(!this.alive){ engine.addEntity(this)}
     }
 

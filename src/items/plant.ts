@@ -16,7 +16,8 @@ export abstract class Plant extends Entity {
             this.addComponent(new Transform())
             this.addComponent(this.animator)
             for(let i=0; i<4; i++){
-                let animationStage = new AnimationState(`Stage${i+1}`, { looping: false })
+                let animationStage = new AnimationState(`Stage${i+1}`, { layer: 0 })
+                animationStage.looping = false
                 this.animationStages.push(animationStage)
                 this.animator.addClip(animationStage)
             }
@@ -27,7 +28,9 @@ export abstract class Plant extends Entity {
 
     setStage(num: number){
         if(num > 0 && num < 4){
-            this.animator.play(this.animationStages[num-1])
+            let stage = this.animationStages[num-1]
+            stage.looping = false
+            stage.play()
         }
     }
 
