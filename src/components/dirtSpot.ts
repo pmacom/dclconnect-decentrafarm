@@ -15,6 +15,6 @@ export abstract class DirtSpot extends InteractibleEntity {
     }
 
     public abstract water(): void
-    public abstract plant(): void
+    public abstract plant(plantTypeName: string): void
 }
 

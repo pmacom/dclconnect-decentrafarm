@@ -1,10 +1,12 @@
 import { DirtSpot } from "src/components/dirtSpot"
 import { Waterable } from "src/components/waterable"
+import { Plant, plantTypes } from "./plant"
 
 export class Dirt extends DirtSpot {
     public interactions: Array<string> = ["waterable", "plantable"]
     public debugTextEntity: Entity
     public debugText: TextShape
+    public plantEntity: Plant | null = null
 
     constructor(
         transform: Transform
@@ -30,8 +32,24 @@ export class Dirt extends DirtSpot {
         this.debugText.value = "Watered!"
     }
 
-    plant() {
-        log('I am going to plant something!')
-        this.debugText.value = "Planted!"
+    plant(plantType: string) {
+        if(!this.plantEntity && plantTypes && plantTypes[plantType]){
+            this.plantEntity = new plantTypes[plantType]()
+            if(this.plantEntity){
+                log(this.plantEntity)
+                this.plantEntity.setParent(this)
+                this.plantEntity.setPosition(new Vector3(0,1,0))
+                log('I am going to plant something!')
+                this.debugText.value = "Planted!"
+            }
+        }
+        // log('I am going to plant something!')
+        // // const _Plant = plantTypes[plantType] as Plant
+        // log("plant")
+        // let type = plantTypes
+        // // log(_Plant)
+        // debugger
+        // // this.plantEntity = new _Plant()
+        // this.debugText.value = "Planted!"
     }
 }

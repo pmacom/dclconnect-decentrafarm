@@ -1,7 +1,7 @@
 import { DirtSpot } from "src/components/dirtSpot";
 import { HoldableEntity } from "src/components/holdable";
 import { InteractibleEntity } from "src/components/interactible";
-import { PlantCabbage } from "./plant";
+import { PlantEntityCabbage } from "./plant";
 
 export abstract class Seeds extends HoldableEntity {
     public interactions: Array<string> = ["plantable"]
@@ -11,72 +11,76 @@ export abstract class Seeds extends HoldableEntity {
     public abstract entityReference: Entity
     public abstract modelReference: GLTFShape
     public abstract amount: number
+    private initialized: boolean = false
 
     constructor() {
         super()
-        this.init()
     }
 
     init() {
-        this.addComponent(new Transform())
-        this.addComponent(this.modelReference)
+        if(!this.initialized) {
+            this.addComponent(new Transform())
+            this.addComponent(this.modelReference)
+            log('Created Seed')
+        }
     }
 
     setPosition(position: Vector3){
+        this.init()
         this.getComponentOrCreate(Transform).position = position
         if(!this.alive){ engine.addEntity(this)}
     }
 
     useItem(target: InteractibleEntity) {
         let t = target as DirtSpot
-        t.plant()
+        t.plant(this.seedTypeName)
     }
 }
 
-export class SeedCabbage extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityCabbage extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "cabbage"
     public amount = 5
 }
 
-export class SeedCarrot extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityCarrot extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "carrot"
     public amount = 5
 }
 
-export class SeedCucumber extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityCucumber extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "cucumber"
     public amount = 5
 }
 
-export class SeedOnion extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityOnion extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "onion"
     public amount = 5
 }
 
-export class SeedPotato extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityPotato extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "potato"
     public amount = 5
 }
 
-export class SeedPumpkin extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityPumpkin extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "pumpkin"
     public amount = 5
 }
 
-export class SeedTomato extends Seeds {
-    public entityReference: Entity = new PlantCabbage()
+export class SeedsEntityTomato extends Seeds {
+    public entityReference: Entity = new PlantEntityCabbage()
     public modelReference: GLTFShape = new GLTFShape('models/seed_cabbage.gltf')
     public seedTypeName: string = "tomato"
     public amount = 5
