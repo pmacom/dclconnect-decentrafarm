@@ -1,24 +1,11 @@
 import { state } from "src/state"
 
-@Component("InteractibleEntity")
-export class InteractibleEntity extends Entity {
+export abstract class InteractibleEntity extends Entity {
     public readonly class: string = 'InteractibleEntity'
     public readonly interactions: Array<string> = []
 
     constructor() {
         super()
-    }
-
-    pickUp(){
-
-    }
-
-    putDown(){
-
-    }
-
-    useItem(){
-
     }
 }
 

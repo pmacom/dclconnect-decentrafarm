@@ -65,7 +65,6 @@ input.subscribe("BUTTON_DOWN", ActionButton.PRIMARY, true, (event) => {
         let target = engine.entities[targetId] as InteractibleEntity
         if(isInteractible(target)){
             let targetInteractions = target.interactions.filter(element => entity.interactions.indexOf(element) !== -1)
-            debugger
             if(targetInteractions.length){
                 entity.useItem(target as InteractibleEntity)
             }

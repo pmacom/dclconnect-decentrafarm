@@ -1,7 +1,8 @@
 import { InteractibleEntity } from "src/components/interactible"
+import { Waterable } from "src/components/waterable"
 
-export class PlantCabbage extends InteractibleEntity {
-    public readonly interactions: Array<string> = ["waterable"]
+export class PlantCabbage extends Waterable {
+    public interactions: Array<string> = ["waterable"]
 
     private animator: Animator = new Animator()
     private animationStage1: AnimationState
@@ -28,5 +29,9 @@ export class PlantCabbage extends InteractibleEntity {
         this.animator.play(this.animationStage2)
        
         engine.addEntity(this);
+    }
+
+    water() {
+        log('I have been watered! YAY!')
     }
 }
