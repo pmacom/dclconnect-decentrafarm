@@ -3,6 +3,7 @@ import { InteractibleEntity } from "./interactible"
 
 export abstract class DirtSpot extends InteractibleEntity {
     public readonly interactions: Array<string> = ["waterable", "plantable"]
+    public readonly plantTypes: Array<string> = ["cabbage"]
     public isWatered: boolean = false
     public hasPlant: boolean = false
 
@@ -13,3 +14,4 @@ export abstract class DirtSpot extends InteractibleEntity {
     public abstract water(): void
     public abstract plant(): void
 }
+
