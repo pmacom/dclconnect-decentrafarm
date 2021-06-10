@@ -6,26 +6,25 @@ import { RaisedBed01 } from './items/raisedBed01'
 import { SeedsEntityCabbage } from './items/seeds'
 import { WateringCan } from './items/wateringCan'
 
-// const bucket1 = new ItemBucket(new Transform({
-//   position: new Vector3(8,0,8)
-// }))
+const bucket1 = new ItemBucket(new Transform({
+  position: new Vector3(8,0,8)
+}))
 
-// const wateringCan = new WateringCan(new Transform({
-//   position: new Vector3(4,0,4)
-// }))
+const wateringCan = new WateringCan(new Transform({
+  position: new Vector3(4,0,4)
+}))
 
-// const raisedBed01 = new RaisedBed01(new Transform({
-//   position: new Vector3(2,0,4)
-// }))
+const raisedBed01 = new RaisedBed01(new Transform({
+  position: new Vector3(2,0,4)
+}))
 
-// const seedCabbage = new SeedsEntityCabbage()
-// seedCabbage.setPosition(new Vector3(4,0,6))
+const seedCabbage = new SeedsEntityCabbage()
+seedCabbage.setPosition(new Vector3(4,0,6))
 
-// const cabbage1 = new PlantEntityCabbage()
-// cabbage1.setPosition(new Vector3(4.1,0,5.3))
+const cabbage1 = new PlantEntityCabbage()
+cabbage1.setPosition(new Vector3(4.1,0,5.3))
 
-const box = new BoxHighlight()
-box.getComponentOrCreate(Transform).position = new Vector3(1,1,8)
+
 
 
 

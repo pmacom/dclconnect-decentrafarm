@@ -27,6 +27,7 @@ export class BoxHighlight extends Entity {
         this.frameEntity = new Entity()
         this.boxShape = new BoxShape()
         this.frameShape = new PlaneShape()
+        this.boxShape.withCollisions = false
         this.addComponent(this.boxShape)
         this.addComponent(new BoxHighlightAnimation())
 
@@ -41,6 +42,18 @@ export class BoxHighlight extends Entity {
         engine.addEntity(this)
     }
 
+    show() {
+      if(!this.alive){
+        engine.addEntity(this)
+      }
+    }
+
+    hide() {
+      if(this.alive){
+        engine.removeEntity(this)
+      }
+    }
+
     addFrame() {
       // planeUVs
       this.frameEntity.addComponent(this.frameShape)
@@ -49,6 +62,7 @@ export class BoxHighlight extends Entity {
         scale: new Vector3(1, 1, 1),
         rotation: new Quaternion().setEuler(90,0,0)
       }))
+      this.frameShape.withCollisions = false
       this.frameShape.uvs = [...planeUVs, ...planeUVs]
 
       const frameMaterial = new Material()

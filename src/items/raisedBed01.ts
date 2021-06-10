@@ -30,6 +30,7 @@ export class RaisedBed01 extends Entity {
             let d = new Dirt(
                 new Transform({
                     position: new Vector3(x, y, z),
+                    // scale: new Vector3(.65, .65, .65)
                 })
             )
             d.setParent(this)
