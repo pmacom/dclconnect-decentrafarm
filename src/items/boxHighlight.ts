@@ -161,6 +161,8 @@ export class AnimateBoxHighlights implements ISystem {
               entity2.onFocus()
               highlightedId = entity2.boxHighlight.uuid
             }
+          } else {
+            highlightedId = null
           }
           // let entity2 = e.entity as InteractibleEntity
           // if(e.entity.entityId && e.entity.boxHighlight){
@@ -181,15 +183,15 @@ export class AnimateBoxHighlights implements ISystem {
     for (let entity of BoxHighlights.entities) {
       let boxHighlight = entity as BoxHighlight
       boxHighlight.updateUV(dt)
-      if(highlightedId && boxHighlight.uuid !== highlightedId) {
+      
+      if(boxHighlight.uuid !== highlightedId) {
         let parent = boxHighlight.getParent() as InteractibleEntity
         if(parent.boxHighlight){
           parent.onBlur()
-          highlightedId = null
         }
       }
     }
-    // highlightedId = null
+    
   }
 }
 engine.addSystem(new AnimateBoxHighlights())
