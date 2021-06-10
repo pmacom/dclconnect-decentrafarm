@@ -1,21 +1,11 @@
 import { DirtSpot } from "src/components/dirtSpot"
-import { Waterable } from "src/components/waterable"
 import { BoxHighlight } from "./boxHighlight"
 import { Plant, plantTypes } from "./plant"
-
-const hiddenMaterial = new Material()
-hiddenMaterial.castShadows = false
-hiddenMaterial.albedoColor = new Color4(1, 0, 0, 0)
-hiddenMaterial.alphaTest = 1
-
 export class Dirt extends DirtSpot {
     public interactions: Array<string> = ["waterable", "plantable"]
     public debugTextEntity: Entity
     public debugText: TextShape
     public plantEntity: Plant | null = null
-
-    // public colliderEntity: Entity
-    // public colliderShape: PlaneShape
     public boxHighlight: BoxHighlight
 
     constructor(
@@ -32,11 +22,7 @@ export class Dirt extends DirtSpot {
         this.debugTextEntity.setParent(this)
         
         this.boxHighlight = new BoxHighlight()
-        this.boxHighlight.getComponentOrCreate(Transform).position = new Vector3(
-            0, // transform.position.x * .65,
-            .33, // .65,
-           0, // transform.position.z * .65,
-        )
+        this.boxHighlight.getComponentOrCreate(Transform).position = new Vector3(0, .33, 0)
         this.boxHighlight.getComponentOrCreate(Transform).scale = new Vector3(
             transform.scale.x * .65,
             transform.scale.y * .65,
@@ -44,21 +30,11 @@ export class Dirt extends DirtSpot {
         )
         this.boxHighlight.setParent(this)
 
-        // this.colliderEntity = new Entity()
-        // this.colliderShape = new PlaneShape()
-        // this.colliderEntity.addComponent(this.colliderShape)
-        // this.colliderEntity.getComponentOrCreate(Transform).position = transform.position
-        // this.colliderEntity.getComponentOrCreate(Transform).scale = transform.scale // new Vector3(0,0,0)
-        // this.colliderEntity.getComponentOrCreate(Transform).rotation = new Quaternion().setEuler(-90,0,0)
-        // this.colliderEntity.addComponent(hiddenMaterial)
-        // this.colliderEntity.setParent(this)
-
-    
-        
 
         this.addComponent(new GLTFShape('models/dirt.gltf'))
         this.addComponent(transform)
         engine.addEntity(this);
+        engine.removeEntity(this.boxHighlight)
     }
 
     water() {
@@ -87,5 +63,9 @@ export class Dirt extends DirtSpot {
         // debugger
         // // this.plantEntity = new _Plant()
         // this.debugText.value = "Planted!"
+    }
+
+    hover() {
+        log('Hovering over this thing')
     }
 }

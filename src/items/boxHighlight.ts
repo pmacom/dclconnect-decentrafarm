@@ -1,3 +1,6 @@
+import { InteractibleEntity } from "src/components/interactible"
+import { Dirt } from "./dirt"
+
 const boxHighlightTexture = new Texture("models/textures/striped_texture_colors3.png")
 @Component("BoxHighlightAnimation")
 export class BoxHighlightAnimation {
@@ -14,8 +17,11 @@ export class BoxHighlight extends Entity {
     public boxShape: BoxShape
     public frameEntity: Entity
     public frameShape: PlaneShape
+    public frameMaterial: Material
+    public boxHighlightMaterial: Material
     public timer: number = 0
     public duration: number = 3
+    public color: Color3 = new Color3(0, 0, 1)
 
     constructor() {
         super()
@@ -27,19 +33,20 @@ export class BoxHighlight extends Entity {
         this.frameEntity = new Entity()
         this.boxShape = new BoxShape()
         this.frameShape = new PlaneShape()
+        this.frameMaterial = new Material()
+        this.boxHighlightMaterial = new Material()
         this.boxShape.withCollisions = false
         this.addComponent(this.boxShape)
         this.addComponent(new BoxHighlightAnimation())
 
-        const boxHighlightMaterial = new Material()
-        boxHighlightMaterial.roughness = 1
-        boxHighlightMaterial.emissiveColor = new Color3(0,0,1)
-        boxHighlightMaterial.albedoTexture = boxHighlightTexture
-        boxHighlightMaterial.alphaTexture = boxHighlightTexture
-        this.addComponent(boxHighlightMaterial)
+        this.boxHighlightMaterial = new Material()
+        this.boxHighlightMaterial.roughness = 1
+        this.boxHighlightMaterial.emissiveColor = this.color // new Color3(0,0,1)
+        this.boxHighlightMaterial.albedoTexture = boxHighlightTexture
+        this.boxHighlightMaterial.alphaTexture = boxHighlightTexture
+        this.addComponent(this.boxHighlightMaterial)
 
         this.addFrame()
-        engine.addEntity(this)
     }
 
     show() {
@@ -54,6 +61,12 @@ export class BoxHighlight extends Entity {
       }
     }
 
+    setColor(color: Color3) {
+      this.color = color
+      this.frameMaterial.emissiveColor = color
+      this.boxHighlightMaterial.emissiveColor = color
+    }
+
     addFrame() {
       // planeUVs
       this.frameEntity.addComponent(this.frameShape)
@@ -65,12 +78,11 @@ export class BoxHighlight extends Entity {
       this.frameShape.withCollisions = false
       this.frameShape.uvs = [...planeUVs, ...planeUVs]
 
-      const frameMaterial = new Material()
-      frameMaterial.roughness = 1
-      frameMaterial.emissiveColor = new Color3(10,0,0)
-      frameMaterial.albedoTexture = boxHighlightTexture
-      frameMaterial.alphaTexture = boxHighlightTexture
-      this.frameEntity.addComponent(frameMaterial)
+      this.frameMaterial.roughness = 1
+      this.frameMaterial.emissiveColor = this.color // new Color3(10,0,0)
+      this.frameMaterial.albedoTexture = boxHighlightTexture
+      this.frameMaterial.alphaTexture = boxHighlightTexture
+      this.frameEntity.addComponent(this.frameMaterial)
 
       this.frameEntity.setParent(this)
     }
@@ -108,8 +120,38 @@ const lerpUVs = (
 }
 
 const BoxHighlights = engine.getComponentGroup(BoxHighlightAnimation)
+
+const isBoxHighlight = (uuid: string) : boolean => {
+  let boxHighlights = BoxHighlights.entities.map(e => {
+    let parent = e.getParent()
+    return parent ? parent.uuid : ""
+  })
+  return boxHighlights.indexOf(uuid) > -1
+}
+
+let physicsCast = PhysicsCast.instance
+let debounceDuration = .1
+let debounceTimer = 0
+let highlightDistance = 3 // Is this in Meters?
 export class AnimateBoxHighlights implements ISystem {
   update(dt: number) {
+    
+    debounceTimer += dt
+    if(debounceTimer >= debounceDuration){
+      physicsCast.hitFirst(
+        physicsCast.getRayFromCamera(highlightDistance),
+        (e) => {
+          if(e.entity.entityId && isBoxHighlight(e.entity.entityId)){
+            let entity = engine.entities[e.entity.entityId] as InteractibleEntity
+            if(entity.boxHighlight){
+              entity.boxHighlight.setColor(new Color3(1,0,0))
+            }
+          }
+        },
+        0
+      )
+      debounceTimer = 0;
+    }
     for (let entity of BoxHighlights.entities) {
       let boxHighlight = entity as BoxHighlight
       boxHighlight.updateUV(dt)
