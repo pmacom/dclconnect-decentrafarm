@@ -21,15 +21,16 @@ export class BoxHighlight extends Entity {
     public boxHighlightMaterial: Material
     public timer: number = 0
     public duration: number = 3
-    public color: Color3 = new Color3(0, 0, 1)
+    public color: Color3 = new Color3(0, 1, 1)
 
     constructor() {
         super()
         this.transform = new Transform({
-            position: new Vector3(0,0,0),
+            position: new Vector3(0,0,.5),
             scale: new Vector3(1,1,1),
-            rotation: new Quaternion().setEuler(0,0,0)
+            rotation: new Quaternion().setEuler(0,90,90)
         })
+        this.addComponentOrReplace(this.transform)
         this.frameEntity = new Entity()
         this.boxShape = new BoxShape()
         this.frameShape = new PlaneShape()
@@ -50,26 +51,6 @@ export class BoxHighlight extends Entity {
         this.addFrame()
     }
 
-    show() {
-      // if(!this.alive){
-      //   engine.addEntity(this)
-      // }
-    }
-
-    hide() {
-      // if(this.alive){
-      //   engine.removeEntity(this)
-      // }
-    }
-
-    onFocus(){
-      this.setColor(new Color3(0,1,1))
-    }
-
-    onBlur(){
-      this.setColor(new Color3(1,0,1))
-    }
-
     setColor(color: Color3) {
       this.color = color
       this.frameMaterial.emissiveColor = color
@@ -81,7 +62,6 @@ export class BoxHighlight extends Entity {
       this.frameEntity.addComponent(this.frameShape)
       this.frameEntity.addComponentOrReplace(new Transform({
         position: new Vector3(0, -.5, 0),
-        scale: new Vector3(1, 1, 1),
         rotation: new Quaternion().setEuler(90,0,0)
       }))
       this.frameShape.withCollisions = false
@@ -130,17 +110,8 @@ const lerpUVs = (
 }
 
 const BoxHighlights = engine.getComponentGroup(BoxHighlightAnimation)
-
-// const isBoxHighlight = (uuid: string) : boolean => {
-//   let boxHighlights = BoxHighlights.entities.map(e => {
-//     let parent = e.getParent()
-//     return parent ? parent.uuid : ""
-//   })
-//   return boxHighlights.indexOf(uuid) > -1
-// }
-
 let physicsCast = PhysicsCast.instance
-let debounceDuration = .1
+let debounceDuration = .2
 let debounceTimer = 0
 let highlightDistance = 3 // Is this in Meters?
 
@@ -156,23 +127,16 @@ export class AnimateBoxHighlights implements ISystem {
         physicsCast.getRayFromCamera(highlightDistance),
         (e) => {
           if(e.entity.entityId){
-            let entity2 = engine.entities[e.entity.entityId] as InteractibleEntity
-            if(entity2.boxHighlight){
-              entity2.onFocus()
-              highlightedId = entity2.boxHighlight.uuid
+            let entity = engine.entities[e.entity.entityId] as InteractibleEntity
+            if(entity.boxHighlight){
+              entity.onFocus()
+              highlightedId = entity.boxHighlight.uuid
+            }else{
+              highlightedId = null
             }
           } else {
             highlightedId = null
           }
-          // let entity2 = e.entity as InteractibleEntity
-          // if(e.entity.entityId && e.entity.boxHighlight){
-          //   let entity = engine.entities[e.entity.entityId] as InteractibleEntity
-          //   log('ok')
-          //   if(entity.boxHighlight){
-          //     entity.onFocus()
-          //     highlightedId = entity.boxHighlight.uuid
-          //   }
-          // }
         },
         0
       )

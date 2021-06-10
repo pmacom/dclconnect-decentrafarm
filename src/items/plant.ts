@@ -40,6 +40,10 @@ export abstract class Plant extends Entity {
         if(!this.alive){ engine.addEntity(this)}
     }
 
+    setRotation(rotation: Quaternion){
+        this.getComponentOrCreate(Transform).rotation = rotation
+    }
+
     water() {
         log('I have been watered! YAY!')
     }
