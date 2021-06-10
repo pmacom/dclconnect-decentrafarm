@@ -44,21 +44,30 @@ export class BoxHighlight extends Entity {
         this.boxHighlightMaterial.emissiveColor = this.color // new Color3(0,0,1)
         this.boxHighlightMaterial.albedoTexture = boxHighlightTexture
         this.boxHighlightMaterial.alphaTexture = boxHighlightTexture
+        this.boxHighlightMaterial.castShadows = false
         this.addComponent(this.boxHighlightMaterial)
 
         this.addFrame()
     }
 
     show() {
-      if(!this.alive){
-        engine.addEntity(this)
-      }
+      // if(!this.alive){
+      //   engine.addEntity(this)
+      // }
     }
 
     hide() {
-      if(this.alive){
-        engine.removeEntity(this)
-      }
+      // if(this.alive){
+      //   engine.removeEntity(this)
+      // }
+    }
+
+    onFocus(){
+      this.setColor(new Color3(0,1,1))
+    }
+
+    onBlur(){
+      this.setColor(new Color3(1,0,1))
     }
 
     setColor(color: Color3) {
@@ -82,6 +91,7 @@ export class BoxHighlight extends Entity {
       this.frameMaterial.emissiveColor = this.color // new Color3(10,0,0)
       this.frameMaterial.albedoTexture = boxHighlightTexture
       this.frameMaterial.alphaTexture = boxHighlightTexture
+      this.frameMaterial.castShadows = false
       this.frameEntity.addComponent(this.frameMaterial)
 
       this.frameEntity.setParent(this)
@@ -121,41 +131,65 @@ const lerpUVs = (
 
 const BoxHighlights = engine.getComponentGroup(BoxHighlightAnimation)
 
-const isBoxHighlight = (uuid: string) : boolean => {
-  let boxHighlights = BoxHighlights.entities.map(e => {
-    let parent = e.getParent()
-    return parent ? parent.uuid : ""
-  })
-  return boxHighlights.indexOf(uuid) > -1
-}
+// const isBoxHighlight = (uuid: string) : boolean => {
+//   let boxHighlights = BoxHighlights.entities.map(e => {
+//     let parent = e.getParent()
+//     return parent ? parent.uuid : ""
+//   })
+//   return boxHighlights.indexOf(uuid) > -1
+// }
 
 let physicsCast = PhysicsCast.instance
 let debounceDuration = .1
 let debounceTimer = 0
 let highlightDistance = 3 // Is this in Meters?
+
+
+let highlightedId : string | null = null
 export class AnimateBoxHighlights implements ISystem {
   update(dt: number) {
-    
+
+    // On Hover
     debounceTimer += dt
     if(debounceTimer >= debounceDuration){
       physicsCast.hitFirst(
         physicsCast.getRayFromCamera(highlightDistance),
         (e) => {
-          if(e.entity.entityId && isBoxHighlight(e.entity.entityId)){
-            let entity = engine.entities[e.entity.entityId] as InteractibleEntity
-            if(entity.boxHighlight){
-              entity.boxHighlight.setColor(new Color3(1,0,0))
+          if(e.entity.entityId){
+            let entity2 = engine.entities[e.entity.entityId] as InteractibleEntity
+            if(entity2.boxHighlight){
+              entity2.onFocus()
+              highlightedId = entity2.boxHighlight.uuid
             }
           }
+          // let entity2 = e.entity as InteractibleEntity
+          // if(e.entity.entityId && e.entity.boxHighlight){
+          //   let entity = engine.entities[e.entity.entityId] as InteractibleEntity
+          //   log('ok')
+          //   if(entity.boxHighlight){
+          //     entity.onFocus()
+          //     highlightedId = entity.boxHighlight.uuid
+          //   }
+          // }
         },
         0
       )
       debounceTimer = 0;
     }
+
+    // Animate the shapes
     for (let entity of BoxHighlights.entities) {
       let boxHighlight = entity as BoxHighlight
       boxHighlight.updateUV(dt)
+      if(highlightedId && boxHighlight.uuid !== highlightedId) {
+        let parent = boxHighlight.getParent() as InteractibleEntity
+        if(parent.boxHighlight){
+          parent.onBlur()
+          highlightedId = null
+        }
+      }
     }
+    // highlightedId = null
   }
 }
 engine.addSystem(new AnimateBoxHighlights())

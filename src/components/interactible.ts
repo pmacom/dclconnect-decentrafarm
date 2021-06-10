@@ -9,6 +9,8 @@ export abstract class InteractibleEntity extends Entity {
     constructor() {
         super()
     }
+    abstract onFocus(): void;
+    abstract onBlur(): void;
 }
 
 export const isInteractible = (entity: InteractibleEntity) : boolean => entity.class == "InteractibleEntity"

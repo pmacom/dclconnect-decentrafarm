@@ -28,13 +28,10 @@ export class Dirt extends DirtSpot {
             transform.scale.y * .65,
             transform.scale.z * .65,
         )
-        this.boxHighlight.setParent(this)
-
 
         this.addComponent(new GLTFShape('models/dirt.gltf'))
         this.addComponent(transform)
         engine.addEntity(this);
-        engine.removeEntity(this.boxHighlight)
     }
 
     water() {
@@ -65,7 +62,15 @@ export class Dirt extends DirtSpot {
         // this.debugText.value = "Planted!"
     }
 
-    hover() {
-        log('Hovering over this thing')
+    onFocus() {
+        log('onFocus')
+        engine.addEntity(this.boxHighlight)
+        this.boxHighlight.setParent(this)
+    }
+
+    onBlur() {
+        log('onBlur')
+        engine.removeEntity(this.boxHighlight)
+        this.boxHighlight.setParent(null)
     }
 }
