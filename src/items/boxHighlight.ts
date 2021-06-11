@@ -111,7 +111,7 @@ const lerpUVs = (
 
 const BoxHighlights = engine.getComponentGroup(BoxHighlightAnimation)
 let physicsCast = PhysicsCast.instance
-let debounceDuration = .2
+let debounceDuration = .1
 let debounceTimer = 0
 let highlightDistance = 3 // Is this in Meters?
 

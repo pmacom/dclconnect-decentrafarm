@@ -1,12 +1,30 @@
+import { AnimateRoughnessTo } from "src/components/animateRoughness"
 import { DirtSpot } from "src/components/dirtSpot"
 import { BoxHighlight } from "./boxHighlight"
 import { Plant, plantTypes } from "./plant"
+
+const dirtRegularUVs = [
+    0,1, .5,1, .5,.5, 0,.5,
+    0,1, .5,1, .5,.5, 0,.5,
+]
+
+const dirtWetUVs = [
+    .5,1, 1,1, 1,.5, .5,.5,
+    .5,1, 1,1, 1,.5, .5,.5,
+]
+
+const dirtTexture = new Texture("models/textures/dirt_state_small.png")
+const dirtTextureAlpha = new Texture("models/textures/dirt_state_small_alpha.jpg")
 export class Dirt extends DirtSpot {
     public interactions: Array<string> = ["waterable", "plantable"]
     public plantEntity: Plant | null = null
     public boxHighlight: BoxHighlight
-    public dirtTexture: Texture
-    public dirtMaterial: Material
+
+    public isWatered: boolean = false
+    public isFertilized: boolean = false
+
+    public dirtMaterial: BasicMaterial
+    public dirtMaterial2: Material
     public dirtShape: PlaneShape
 
     constructor(
@@ -14,19 +32,23 @@ export class Dirt extends DirtSpot {
     ) {
         super()
         this.dirtShape = new PlaneShape()
-        this.dirtTexture = new Texture("models/textures/dirt_state_small.png")
-        this.dirtMaterial = new Material()
-        this.dirtMaterial.albedoTexture = this.dirtTexture
-        this.dirtMaterial.alphaTexture = this.dirtTexture
-        this.dirtMaterial.roughness = 1
-        this.dirtMaterial.castShadows = false
-        this.dirtShape.uvs = [
-            0,1, .5,1, .5,.5, 0,.5,
-            0,1, .5,1, .5,.5, 0,.5,
-        ]
-          
+
+        this.dirtMaterial = new BasicMaterial()
+        // this.dirtMaterial.castShadows = false
+        // this.dirtMaterial.texture = dirtTexture
+        // this.dirtShape.uvs = dirtRegularUVs
+        // this.addComponent(this.dirtMaterial)
+
+        this.dirtMaterial2 = new Material()
+        this.dirtMaterial2.albedoTexture = dirtTexture
+        this.dirtMaterial2.alphaTexture = dirtTextureAlpha
+        this.dirtMaterial2.transparencyMode = 1
+        this.dirtMaterial2.roughness = 1
+        this.dirtMaterial2.castShadows = false
+        this.dirtShape.uvs = dirtRegularUVs
+        this.addComponent(this.dirtMaterial2)
+
         this.addComponent(this.dirtShape)
-        this.addComponent(this.dirtMaterial)
         this.boxHighlight = new BoxHighlight()
  
         // this.addComponent(new GLTFShape('models/dirt.gltf'))
@@ -40,7 +62,9 @@ export class Dirt extends DirtSpot {
 
     water() {
         log('I have been watered! YAY!')
-        this.dirtMaterial.roughness = .4
+        this.addComponent(new AnimateRoughnessTo(this.dirtMaterial2, .4, 2))
+        // this.dirtMaterial2.roughness = .4
+        this.dirtShape.uvs = dirtWetUVs
         // this.debugText.value = this.plantType ? `${this.plantType} Watered!` : 'Wet Soil'
     }
 
