@@ -8,7 +8,7 @@ export class RaisedBed01 extends Entity {
         transform: Transform
     ) {
         super()
-        this.addComponent(new GLTFShape('models/environment/raisedBed01.gltf'))
+        // this.addComponent(new GLTFShape('models/environment/raisedBed01.gltf'))
         this.addComponent(transform)
 
         let height = .31

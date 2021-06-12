@@ -32,6 +32,9 @@ export class Dirt extends DirtSpot {
     public plantEntity: Plant | null = null
     public boxHighlight: BoxHighlight = boxHighlight
 
+    public debugTextEntity: Entity 
+    public debugTextShape: TextShape
+
     public isWatered: boolean = false
     public isFertilized: boolean = false
 
@@ -43,6 +46,13 @@ export class Dirt extends DirtSpot {
     ) {
         super()
         this.dirtShape = new PlaneShape()
+
+        this.debugTextEntity = new Entity()
+        this.debugTextShape = new TextShape("Hello World!")
+        this.debugTextShape.fontSize = 1.3
+        this.debugTextEntity.addComponent(this.debugTextShape)
+        this.debugTextEntity.addComponent(new Billboard())
+        this.debugTextEntity.setParent(this)
 
         this.dirtMaterial = new Material()
         this.dirtMaterial.albedoTexture = dirtTexture
@@ -69,9 +79,11 @@ export class Dirt extends DirtSpot {
         this.addComponent(new AnimateRoughnessTo(this.dirtMaterial, roughness, 10))
         this.dirtMaterial.metallic = 0
         this.dirtShape.uvs = dirtWetUVs
+        this.debugTextShape.value = "watered!"
     }
 
     plant(plantType: string) {
+        debugger;
         if(!this.hasPlant && plantTypes && plantTypes[plantType]){
             this.plantEntity = new plantTypes[plantType]()
             if(this.plantEntity){
@@ -80,8 +92,10 @@ export class Dirt extends DirtSpot {
                 this.plantEntity.setPosition(new Vector3(0,0,0))
                 this.plantEntity.setRotation(new Quaternion().setEuler(0,90,90))
                 this.plantEntity.setStage(2)
+                engine.addEntity(this.plantEntity)
                 this.hasPlant = true
                 this.plantType = plantType
+                this.debugTextShape.value = `${plantType} planted`
             }
         }
     }
