@@ -2,16 +2,18 @@ import { InteractibleEntity } from "src/components/interactible"
 import { Dirt } from "./dirt"
 
 const boxHighlightTexture = new Texture("models/textures/striped_texture_colors3.png")
-@Component("BoxHighlightAnimation")
-export class BoxHighlightAnimation {
-  constructor(public speed: number = 1) {}
-}
-
+const debounceSpeed = .1
 const startUVs = [ 0,1, .5,1, .5,.5, 0,.5 ]
 const endUVs   = [.5,1, 1,1, 1,.5, .5,.5 ]
 const invisUVs = [ 0.6, 0.4, 0.9, 0.4, 0.9, 0.1, 0.6, .01  ]
 const planeUVs = [ 0,.5, .5,.5, .5,0, 0,0 ]
-// const planeUVs = [ 0,.5, .5,.5, .5,0, 0,0 ]
+export const highlightDistance = 4 // Is this in Meters?
+
+
+@Component("BoxHighlightAnimation")
+export class BoxHighlightAnimation {
+  constructor(public speed: number = 1) {}
+}
 export class BoxHighlight extends Entity {
     public transform : Transform
     public boxShape: BoxShape
@@ -111,9 +113,7 @@ const lerpUVs = (
 
 const BoxHighlights = engine.getComponentGroup(BoxHighlightAnimation)
 let physicsCast = PhysicsCast.instance
-let debounceDuration = .1
 let debounceTimer = 0
-let highlightDistance = 3 // Is this in Meters?
 
 
 let highlightedId : string | null = null
@@ -122,7 +122,7 @@ export class AnimateBoxHighlights implements ISystem {
 
     // On Hover
     debounceTimer += dt
-    if(debounceTimer >= debounceDuration){
+    if(debounceTimer >= debounceSpeed){
       physicsCast.hitFirst(
         physicsCast.getRayFromCamera(highlightDistance),
         (e) => {
@@ -138,7 +138,7 @@ export class AnimateBoxHighlights implements ISystem {
             highlightedId = null
           }
         },
-        0
+        Math.random()*100
       )
       debounceTimer = 0;
     }

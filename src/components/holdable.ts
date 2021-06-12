@@ -1,6 +1,6 @@
+import { highlightDistance } from "src/items/boxHighlight"
 import { state } from "src/state"
 import { InteractibleEntity, findInteractibleEntityByName, isInteractible } from "./interactible"
-
 export abstract class HoldableEntity extends Entity {
     public abstract holdingPosition: Vector3
     public abstract holdingRotation: Quaternion
@@ -19,6 +19,7 @@ export abstract class HoldableEntity extends Entity {
                 button: ActionButton.PRIMARY,
                 showFeedback: true,
                 hoverText: "Pick Up",
+                distance: 3
               }
             )
         )
@@ -60,7 +61,7 @@ input.subscribe("BUTTON_DOWN", ActionButton.SECONDARY, true, (event) => {
 input.subscribe("BUTTON_DOWN", ActionButton.PRIMARY, true, (event) => {
     const entity = state.isHoldingEntityName ? findHoldableEntityByName(state.isHoldingEntityName) : null
     if(!entity){ return }
-    if(state.isHolding && event?.hit?.entityId){
+    if(state.isHolding && event?.hit?.entityId && event.hit.length <= highlightDistance){
         let targetId = event.hit.entityId
         let target = engine.entities[targetId] as InteractibleEntity
         if(isInteractible(target)){
