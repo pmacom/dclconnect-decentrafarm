@@ -10,7 +10,7 @@ export class ItemBucket extends HoldableEntity {
         transform: Transform
     ) {
         super()
-        this.addComponent(new GLTFShape('models/bucket.gltf'))
+        this.addComponent(new GLTFShape('models/items/bucket.gltf'))
         this.addComponent(transform)
         engine.addEntity(this);
     }

@@ -11,7 +11,7 @@ export class WateringCan extends HoldableEntity {
         transform: Transform
     ) {
         super()
-        this.addComponent(new GLTFShape('models/wateringCan.gltf'))
+        this.addComponent(new GLTFShape('models/items/wateringCan.gltf'))
         this.addComponent(transform)
         engine.addEntity(this);
     }

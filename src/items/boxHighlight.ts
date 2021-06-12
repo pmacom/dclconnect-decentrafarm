@@ -1,14 +1,12 @@
 import { InteractibleEntity } from "src/components/interactible"
-import { Dirt } from "./dirt"
 
-const boxHighlightTexture = new Texture("models/textures/striped_texture_colors3.png")
+const boxHighlightTexture = new Texture("images/boxHighlight.png")
 const debounceSpeed = .1
 const startUVs = [ 0,1, .5,1, .5,.5, 0,.5 ]
 const endUVs   = [.5,1, 1,1, 1,.5, .5,.5 ]
 const invisUVs = [ 0.6, 0.4, 0.9, 0.4, 0.9, 0.1, 0.6, .01  ]
 const planeUVs = [ 0,.5, .5,.5, .5,0, 0,0 ]
 export const highlightDistance = 4 // Is this in Meters?
-
 
 @Component("BoxHighlightAnimation")
 export class BoxHighlightAnimation {
@@ -159,3 +157,5 @@ export class AnimateBoxHighlights implements ISystem {
   }
 }
 engine.addSystem(new AnimateBoxHighlights())
+
+export const boxHighlight = new BoxHighlight()

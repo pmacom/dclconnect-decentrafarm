@@ -57,7 +57,7 @@ cabbage1.setPosition(new Vector3(4.1,0,5.3))
 
 const grass = new Entity('Grass')
 const grass2 = new Entity('Grass2')
-const grassShape = new GLTFShape("models/FloorBaseGrass_01.glb")
+const grassShape = new GLTFShape("models/environment/grass.glb")
 grassShape.withCollisions = true
 grassShape.isPointerBlocker = true
 grassShape.visible = true
