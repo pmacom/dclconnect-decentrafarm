@@ -48,7 +48,7 @@ export class Dirt extends DirtSpot {
         this.dirtShape = new PlaneShape()
 
         this.debugTextEntity = new Entity()
-        this.debugTextShape = new TextShape("Hello World!")
+        this.debugTextShape = new TextShape(":)")
         this.debugTextShape.fontSize = 1.3
         this.debugTextEntity.addComponent(this.debugTextShape)
         this.debugTextEntity.addComponent(new Billboard())
@@ -83,7 +83,6 @@ export class Dirt extends DirtSpot {
     }
 
     plant(plantType: string) {
-        debugger;
         if(!this.hasPlant && plantTypes && plantTypes[plantType]){
             this.plantEntity = new plantTypes[plantType]()
             if(this.plantEntity){
@@ -91,7 +90,7 @@ export class Dirt extends DirtSpot {
                 this.plantEntity.setParent(this)
                 this.plantEntity.setPosition(new Vector3(0,0,0))
                 this.plantEntity.setRotation(new Quaternion().setEuler(0,90,90))
-                this.plantEntity.setStage(2)
+                this.plantEntity.setStage(0)
                 engine.addEntity(this.plantEntity)
                 this.hasPlant = true
                 this.plantType = plantType

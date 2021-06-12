@@ -68,8 +68,8 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "DiffuseColor_Texture-DiffuseColor_Texture",
-            "uri" : "textures/DiffuseColor_Texture-DiffuseColor_Texture.png"
+            "name" : "carrot_Base-DiffuseColor_Texture",
+            "uri" : "textures/carrot_Base-DiffuseColor_Texture.png"
         }
     ],
     "accessors" : [

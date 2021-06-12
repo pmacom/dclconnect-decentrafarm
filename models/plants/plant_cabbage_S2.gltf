@@ -15,7 +15,7 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "plant_cabbage_S1",
+            "name" : "plant_cabbage_S2",
             "rotation" : [
                 0.7071068286895752,
                 0,
@@ -31,8 +31,9 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
-            "name" : "Plant_Cabbage.004",
+            "name" : "Plant_Cabbage",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -44,7 +45,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Scene.004",
+            "name" : "Scene.003",
             "primitives" : [
                 {
                     "attributes" : {
@@ -67,66 +68,66 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "DiffuseColor_Texture-cabbage_Base-DiffuseColor_Texture",
-            "uri" : "textures/DiffuseColor_Texture-cabbage_Base-DiffuseColor_Texture.png"
+            "name" : "cabbage_Base-DiffuseColor_Texture",
+            "uri" : "textures/cabbage_Base-DiffuseColor_Texture.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 86,
+            "count" : 234,
             "max" : [
-                19.654464721679688,
-                13.379719734191895,
-                0.0034749824553728104
+                31.398061752319336,
+                25.12415885925293,
+                0.3639429807662964
             ],
             "min" : [
-                -23.402080535888672,
-                -14.93531608581543,
-                -18.98430824279785
+                -26.67460060119629,
+                -22.727144241333008,
+                -24.433414459228516
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 86,
+            "count" : 234,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 86,
+            "count" : 234,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 234,
+            "count" : 756,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1032,
+            "byteLength" : 2808,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1032,
-            "byteOffset" : 1032
+            "byteLength" : 2808,
+            "byteOffset" : 2808
         },
         {
             "buffer" : 0,
-            "byteLength" : 688,
-            "byteOffset" : 2064
+            "byteLength" : 1872,
+            "byteOffset" : 5616
         },
         {
             "buffer" : 0,
-            "byteLength" : 468,
-            "byteOffset" : 2752
+            "byteLength" : 1512,
+            "byteOffset" : 7488
         }
     ],
     "samplers" : [
@@ -137,8 +138,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 3220,
-            "uri" : "plant_cabbage_1.bin"
+            "byteLength" : 9000,
+            "uri" : "plant_cabbage_S2.bin"
         }
     ]
 }

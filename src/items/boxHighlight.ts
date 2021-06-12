@@ -1,7 +1,7 @@
 import { InteractibleEntity } from "src/components/interactible"
 
 const boxHighlightTexture = new Texture("images/boxHighlight.png")
-const debounceSpeed = .1
+const debounceSpeed = .2
 const startUVs = [ 0,1, .5,1, .5,.5, 0,.5 ]
 const endUVs   = [.5,1, 1,1, 1,.5, .5,.5 ]
 const invisUVs = [ 0.6, 0.4, 0.9, 0.4, 0.9, 0.1, 0.6, .01  ]

@@ -31,8 +31,9 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
-            "name" : "Plant_Potato.004",
+            "name" : "Potato",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,

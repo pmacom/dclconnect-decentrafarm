@@ -31,8 +31,9 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
-            "name" : "Plant_Cabbage.002",
+            "name" : "Plant_Cabbage",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -67,8 +68,8 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "DiffuseColor_Texture-cabbage_Base-DiffuseColor_Texture",
-            "uri" : "textures/DiffuseColor_Texture-cabbage_Base-DiffuseColor_Texture.png"
+            "name" : "cabbage_Base-DiffuseColor_Texture",
+            "uri" : "textures/cabbage_Base-DiffuseColor_Texture.png"
         }
     ],
     "accessors" : [
@@ -138,7 +139,7 @@
     "buffers" : [
         {
             "byteLength" : 20128,
-            "uri" : "plant_cabbage_3.bin"
+            "uri" : "plant_cabbage_S3.bin"
         }
     ]
 }

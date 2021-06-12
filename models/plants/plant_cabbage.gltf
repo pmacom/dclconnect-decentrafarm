@@ -31,6 +31,7 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
             "name" : "Plant_Cabbage",
             "pbrMetallicRoughness" : {
@@ -67,8 +68,8 @@
     "images" : [
         {
             "mimeType" : "image/png",
-            "name" : "DiffuseColor_Texture-cabbage_Base-DiffuseColor_Texture",
-            "uri" : "textures/DiffuseColor_Texture-cabbage_Base-DiffuseColor_Texture.png"
+            "name" : "cabbage_Base-DiffuseColor_Texture",
+            "uri" : "textures/cabbage_Base-DiffuseColor_Texture.png"
         }
     ],
     "accessors" : [

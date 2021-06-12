@@ -46,10 +46,10 @@ export class PlantEntityCabbage extends Plant {
     public plantTypeName = "cabbage"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_cabbage_1.gltf'),
-        new GLTFShape('models/plants/plant_cabbage_2.gltf'),
-        new GLTFShape('models/plants/plant_cabbage_3.gltf'),
-        new GLTFShape('models/plants/plant_cabbage_4.gltf'),
+        new GLTFShape('models/plants/plant_cabbage_S1.gltf'),
+        new GLTFShape('models/plants/plant_cabbage_S2.gltf'),
+        new GLTFShape('models/plants/plant_cabbage_S3.gltf'),
+        new GLTFShape('models/plants/plant_cabbage_S4.gltf'),
     ]
 }
 
@@ -57,10 +57,10 @@ export class PlantEntityCarrot extends Plant {
     public plantTypeName = "carrot"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_carrot_1.gltf'),
-        new GLTFShape('models/plants/plant_carrot_2.gltf'),
-        new GLTFShape('models/plants/plant_carrot_3.gltf'),
-        new GLTFShape('models/plants/plant_carrot_4.gltf'),
+        new GLTFShape('models/plants/plant_carrot_S1.gltf'),
+        new GLTFShape('models/plants/plant_carrot_S2.gltf'),
+        new GLTFShape('models/plants/plant_carrot_S3.gltf'),
+        new GLTFShape('models/plants/plant_carrot_S4.gltf'),
     ]
 }
 
@@ -68,10 +68,10 @@ export class PlantEntityCucumber extends Plant {
     public plantTypeName = "cucumber"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_cucumber_1.gltf'),
-        new GLTFShape('models/plants/plant_cucumber_2.gltf'),
-        new GLTFShape('models/plants/plant_cucumber_3.gltf'),
-        new GLTFShape('models/plants/plant_cucumber_4.gltf'),
+        new GLTFShape('models/plants/plant_cucumber_S1.gltf'),
+        new GLTFShape('models/plants/plant_cucumber_S2.gltf'),
+        new GLTFShape('models/plants/plant_cucumber_S3.gltf'),
+        new GLTFShape('models/plants/plant_cucumber_S4.gltf'),
     ]
 }
 
@@ -79,10 +79,10 @@ export class PlantEntityOnion extends Plant {
     public plantTypeName = "onion"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_onion_1.gltf'),
-        new GLTFShape('models/plants/plant_onion_2.gltf'),
-        new GLTFShape('models/plants/plant_onion_3.gltf'),
-        new GLTFShape('models/plants/plant_onion_4.gltf'),
+        new GLTFShape('models/plants/plant_onion_S1.gltf'),
+        new GLTFShape('models/plants/plant_onion_S2.gltf'),
+        new GLTFShape('models/plants/plant_onion_S3.gltf'),
+        new GLTFShape('models/plants/plant_onion_S4.gltf'),
     ]
 }
 
@@ -90,10 +90,10 @@ export class PlantEntityPotato extends Plant {
     public plantTypeName = "potato"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_potato_1.gltf'),
-        new GLTFShape('models/plants/plant_potato_2.gltf'),
-        new GLTFShape('models/plants/plant_potato_3.gltf'),
-        new GLTFShape('models/plants/plant_potato_4.gltf'),
+        new GLTFShape('models/plants/plant_potato_S1.gltf'),
+        new GLTFShape('models/plants/plant_potato_S2.gltf'),
+        new GLTFShape('models/plants/plant_potato_S3.gltf'),
+        new GLTFShape('models/plants/plant_potato_S4.gltf'),
     ]
 }
 
@@ -101,10 +101,10 @@ export class PlantEntityPumpkin extends Plant {
     public plantTypeName = "pumpkin"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_pumpkin_1.gltf'),
-        new GLTFShape('models/plants/plant_pumpkin_2.gltf'),
-        new GLTFShape('models/plants/plant_pumpkin_3.gltf'),
-        new GLTFShape('models/plants/plant_pumpkin_4.gltf'),
+        new GLTFShape('models/plants/plant_pumpkin_S1.gltf'),
+        new GLTFShape('models/plants/plant_pumpkin_S2.gltf'),
+        new GLTFShape('models/plants/plant_pumpkin_S3.gltf'),
+        new GLTFShape('models/plants/plant_pumpkin_S4.gltf'),
     ]
 }
 
@@ -112,10 +112,10 @@ export class PlantEntityTomato extends Plant {
     public plantTypeName = "tomato"
     public modelReferences = [
         new GLTFShape('models/environment/soil_pile.gltf'),
-        new GLTFShape('models/plants/plant_tomato_1.gltf'),
-        new GLTFShape('models/plants/plant_tomato_2.gltf'),
-        new GLTFShape('models/plants/plant_tomato_3.gltf'),
-        new GLTFShape('models/plants/plant_tomato_4.gltf'),
+        new GLTFShape('models/plants/plant_tomato_S1.gltf'),
+        new GLTFShape('models/plants/plant_tomato_S2.gltf'),
+        new GLTFShape('models/plants/plant_tomato_S3.gltf'),
+        new GLTFShape('models/plants/plant_tomato_S4.gltf'),
     ]
 }
 
