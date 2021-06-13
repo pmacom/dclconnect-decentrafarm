@@ -3,7 +3,15 @@ import { InteractibleEntity } from "./interactible"
 
 export abstract class DirtSpot extends InteractibleEntity {
     public readonly interactions: Array<string> = ["waterable", "plantable"]
-    public readonly plantTypes: Array<string> = ["cabbage", "carrot", "cucumber", "onion", "potato", "pumpkin", "tomato"]
+    public readonly plantTypes: Array<string> = [
+        "cabbage",
+        "carrot",
+        "cucumber",
+        "onion",
+        "potato",
+        "pumpkin",
+        "tomato",
+    ]
     public isWatered: boolean = false
     public isFertilized: boolean = false
     public hasPlant: boolean = false

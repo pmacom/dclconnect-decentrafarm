@@ -57,8 +57,8 @@ seedTomato.setPosition(new Vector3(4,0,12))
 
 
 
-const tomato1 = new PlantEntityTomato()
-tomato1.setPosition(new Vector3(0,0,0))
+// const tomato1 = new PlantEntityTomato()
+// tomato1.setPosition(new Vector3(0,0,0))
 
 // const woodenStand = new WoodenStand(new Transform({
 //   position: new Vector3(8,0,8)

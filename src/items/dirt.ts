@@ -38,47 +38,53 @@ export class Dirt extends DirtSpot {
     public isWatered: boolean = false
     public isFertilized: boolean = false
 
-    public dirtMaterial: Material
-    public dirtShape: PlaneShape
+    // public dirtMaterial: Material
+    // public dirtShape: PlaneShape
 
     constructor(
         transform: Transform
     ) {
         super()
-        this.dirtShape = new PlaneShape()
+        // this.dirtShape = new PlaneShape()
 
         this.debugTextEntity = new Entity()
-        this.debugTextShape = new TextShape(":)")
+        this.debugTextShape = new TextShape("")
         this.debugTextShape.fontSize = 1.3
         this.debugTextEntity.addComponent(this.debugTextShape)
         this.debugTextEntity.addComponent(new Billboard())
         this.debugTextEntity.setParent(this)
 
-        this.dirtMaterial = new Material()
-        this.dirtMaterial.albedoTexture = dirtTexture
-        this.dirtMaterial.alphaTexture = dirtTextureAlpha
-        this.dirtMaterial.bumpTexture = dirtTextureBump
-        this.dirtMaterial.transparencyMode = 2
-        this.dirtMaterial.roughness = 1
-        this.dirtMaterial.castShadows = false
-        this.dirtShape.uvs = dirtRegularUVs
-        this.addComponent(this.dirtMaterial)
-        this.addComponent(this.dirtShape)
- 
+        this.addComponent(new GLTFShape("models/environment/soil_pile_dry.gltf"))
         this.addComponent(new Transform({
             position: transform.position,
             scale: new Vector3(.65, .65, .65),
-            rotation: new Quaternion(...transform.rotation.asArray()).setEuler(-90,0,0)
         }))
+        // this.dirtMaterial = new Material()
+        // this.dirtMaterial.albedoTexture = dirtTexture
+        // this.dirtMaterial.alphaTexture = dirtTextureAlpha
+        // this.dirtMaterial.bumpTexture = dirtTextureBump
+        // this.dirtMaterial.transparencyMode = 2
+        // this.dirtMaterial.roughness = 1
+        // this.dirtMaterial.castShadows = false
+        // this.dirtShape.uvs = dirtRegularUVs
+        // this.addComponent(this.dirtMaterial)
+        // this.addComponent(this.dirtShape)
+ 
+        // this.addComponent(new Transform({
+        //     position: transform.position,
+        //     scale: new Vector3(.65, .65, .65),
+        //     rotation: new Quaternion(...transform.rotation.asArray()).setEuler(-90,0,0)
+        // }))
         engine.addEntity(this);
     }
 
     water() {
         log('I have been watered! YAY!')
         let roughness = 0
-        this.addComponent(new AnimateRoughnessTo(this.dirtMaterial, roughness, 10))
-        this.dirtMaterial.metallic = 0
-        this.dirtShape.uvs = dirtWetUVs
+        // this.addComponent(new AnimateRoughnessTo(this.dirtMaterial, roughness, 10))
+        // this.dirtMaterial.metallic = 0
+        // this.dirtShape.uvs = dirtWetUVs
+        this.addComponentOrReplace(new GLTFShape("models/environment/soil_flat_wet.gltf"))
         this.debugTextShape.value = "watered!"
     }
 
@@ -86,11 +92,10 @@ export class Dirt extends DirtSpot {
         if(!this.hasPlant && plantTypes && plantTypes[plantType]){
             this.plantEntity = new plantTypes[plantType]()
             if(this.plantEntity){
-                log('I am going to plant something!')
                 this.plantEntity.setParent(this)
                 this.plantEntity.setPosition(new Vector3(0,0,0))
-                this.plantEntity.setRotation(new Quaternion().setEuler(0,90,90))
-                this.plantEntity.setStage(0)
+                // this.plantEntity.setRotation(new Quaternion().setEuler(0,90,90))
+                this.plantEntity.setStage(3)
                 engine.addEntity(this.plantEntity)
                 this.hasPlant = true
                 this.plantType = plantType

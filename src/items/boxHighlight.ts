@@ -26,9 +26,9 @@ export class BoxHighlight extends Entity {
     constructor() {
         super()
         this.transform = new Transform({
-            position: new Vector3(0,0,.5),
-            scale: new Vector3(1,1,1),
-            rotation: new Quaternion().setEuler(0,90,90)
+            position: new Vector3(0,.5,0),
+            //scale: new Vector3(1,1,1),
+            rotation: new Quaternion().setEuler(0, 0, 0)
         })
         this.addComponentOrReplace(this.transform)
         this.frameEntity = new Entity()
