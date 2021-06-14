@@ -108,16 +108,41 @@ const BuildingHiddableEntities = engine.getComponentGroup(BuildingHiddableEntity
 let debounceTimer = 0
 let debounceSpeed = .2
 let physicsCast = PhysicsCast.instance
+let houseColliderLayer = 1
+
+
+const colliderCheckerShape = new utils.TriggerBoxShape(
+    new Vector3(.25, .25, .25),
+    new Vector3(0,0,0),
+)
+
+const colliderChecker = new Entity()
+const colliderCheckerBoxShape = new BoxShape()
+colliderCheckerBoxShape.withCollisions = false
+colliderChecker.addComponent(colliderCheckerBoxShape)
+colliderChecker.addComponent(new utils.TriggerComponent(
+    colliderCheckerShape,
+    {
+        onTriggerEnter: () => {
+            log('something has entered')
+        },
+        enableDebug: true,
+    }
+))
+engine.addEntity(colliderChecker)
 
 class testObject extends Entity {
-    public sphereShape: SphereShape = new SphereShape()
+    public boxShape: BoxShape = new BoxShape()
 
     constructor(){
         super()
-        this.addComponent(this.sphereShape)
-        this.sphereShape.withCollisions = false
+        
+        this.addComponent(this.boxShape)
+        this.boxShape.withCollisions = false
         this.addComponent(new Transform({
-            scale: new Vector3(.2, .2, .2)
+            // position: new Vector3(1,5,1),
+            rotation: new Quaternion().setEuler(45,45,45),
+            scale: new Vector3(.01, .01, .01)
         }))
         engine.addEntity(this)
     }
@@ -143,13 +168,6 @@ export class HouseCameraHidder implements ISystem {
                     e.entities[0].hitPoint.z,
                 )
 
-                let camPosition = Camera.instance.position
-                let cam = new Vector3(
-                    camPosition.x,
-                    camPosition.y*-1,
-                    camPosition.z
-                )
-
                 t1.addComponentOrReplace(new Transform({
                     position: target
                 }))
@@ -165,17 +183,32 @@ export class HouseCameraHidder implements ISystem {
                     direction: reversed,
                     distance: 1000,
                 }
+
+                // colliderCheckerShape
               
                 physicsCast.hitAll(
                     ray,
                     (e) => {
-                        t2.addComponentOrReplace(new Transform({
+                        // colliderCheckerShape.position.x = e.entities[0].hitPoint.x
+                        // colliderCheckerShape.position.y = e.entities[0].hitPoint.y
+                        // colliderCheckerShape.position.z = e.entities[0].hitPoint.z
+
+                        colliderChecker.addComponentOrReplace(new Transform({
                             position: new Vector3(
                                 e.entities[0].hitPoint.x,
                                 e.entities[0].hitPoint.y,
                                 e.entities[0].hitPoint.z,
-                            )
+                            ),
+                            scale: new Vector3(.5, .5, .5)
                         }))
+
+                        // t2.addComponentOrReplace(new Transform({
+                        //     position: new Vector3(
+                        //         e.entities[0].hitPoint.x,
+                        //         e.entities[0].hitPoint.y,
+                        //         e.entities[0].hitPoint.z,
+                        //     )
+                        // }))
                     },
                     0
                 )
