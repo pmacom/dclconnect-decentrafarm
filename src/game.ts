@@ -1,4 +1,6 @@
 import * as utils from '@dcl/ecs-scene-utils'
+import { Chick } from './animals/chick'
+import { Chicken } from './animals/chicken'
 import { BoxHighlight } from './items/boxHighlight'
 import { ItemBucket } from './items/bucket'
 import { House, HouseRoof } from './items/house'
@@ -66,7 +68,19 @@ seedTomato.setPosition(new Vector3(4,0,12))
 
 
 
+// const chicken1 = new Chicken()
+// const chicken2 = new Chicken()
+// const chicken3 = new Chicken()
+// const chicken4 = new Chicken()
+// const chicken5 = new Chicken()
+// const chicken6 = new Chicken()
 
+// const chick1 = new Chick()
+// const chick2 = new Chick()
+// const chick3 = new Chick()
+// const chick4 = new Chick()
+// const chick5 = new Chick()
+// const chick6 = new Chick()
 
 const house = new House(new Transform({
   position: new Vector3(11,0,11),

@@ -1,0 +1,361 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                11
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Light",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558803558349609,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        },
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.358891487121582,
+                4.958309173583984,
+                6.925790786743164
+            ]
+        },
+        {
+            "name" : "Head",
+            "translation" : [
+                0,
+                7.717489242553711,
+                0.8667119741439819
+            ]
+        },
+        {
+            "name" : "FootL",
+            "rotation" : [
+                -4.0389683162140665e-28,
+                0,
+                -8.96831017167883e-44,
+                1
+            ],
+            "scale" : [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation" : [
+                0.040474891662597656,
+                -0.8201533555984497,
+                1.8123815059661865
+            ]
+        },
+        {
+            "children" : [
+                3
+            ],
+            "name" : "LegL",
+            "translation" : [
+                -8.630752563476562e-05,
+                -0.8873403668403625,
+                -0.029946237802505493
+            ]
+        },
+        {
+            "children" : [
+                4
+            ],
+            "name" : "HipL",
+            "rotation" : [
+                1.190787964860528e-20,
+                1.2239500356371532e-16,
+                4.13062565045705e-18,
+                1
+            ],
+            "translation" : [
+                2.100086212158203,
+                -1.4126596450805664,
+                0.7055259346961975
+            ]
+        },
+        {
+            "name" : "FootR",
+            "rotation" : [
+                1.5345811677668457e-30,
+                -3.552713678800501e-15,
+                -2.220443137574557e-16,
+                1
+            ],
+            "scale" : [
+                1,
+                0.9999999403953552,
+                1
+            ],
+            "translation" : [
+                -0.04046976566314697,
+                0.8201533555984497,
+                -1.8123853206634521
+            ]
+        },
+        {
+            "children" : [
+                6
+            ],
+            "name" : "LegtR",
+            "rotation" : [
+                1.5154077992463044e-10,
+                -3.485759236809827e-08,
+                6.786506467904019e-09,
+                1
+            ],
+            "translation" : [
+                8.981471910374239e-05,
+                0.8873366117477417,
+                0.02994636818766594
+            ]
+        },
+        {
+            "children" : [
+                7
+            ],
+            "name" : "HipR",
+            "rotation" : [
+                1,
+                -3.295987521608379e-15,
+                7.549790126404332e-08,
+                4.371138828673793e-08
+            ],
+            "translation" : [
+                -2.1000900268554688,
+                -1.4126633405685425,
+                0.7055258750915527
+            ]
+        },
+        {
+            "children" : [
+                2,
+                5,
+                8
+            ],
+            "name" : "Root",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ],
+            "translation" : [
+                0,
+                -1.133104920387268,
+                -3.1201534271240234
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Chicken",
+            "skin" : 0
+        },
+        {
+            "children" : [
+                10,
+                9
+            ],
+            "name" : "Armature",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "CHickType:chicken_A",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5527864098548889
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "JOINTS_0" : 3,
+                        "WEIGHTS_0" : 4
+                    },
+                    "indices" : 5,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "Chicken_A",
+            "uri" : "textures/Chicken_A.png"
+        }
+    ],
+    "skins" : [
+        {
+            "inverseBindMatrices" : 6,
+            "joints" : [
+                9,
+                2,
+                5,
+                4,
+                3,
+                8,
+                7,
+                6
+            ],
+            "name" : "Armature"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 298,
+            "max" : [
+                0.06682109832763672,
+                0.16887764632701874,
+                0.06735455989837646
+            ],
+            "min" : [
+                -0.06682109832763672,
+                0.0002829777367878705,
+                -0.0918555036187172
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 298,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 298,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5121,
+            "count" : 298,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 298,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5123,
+            "count" : 1521,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "MAT4"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 3576,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3576,
+            "byteOffset" : 3576
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2384,
+            "byteOffset" : 7152
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1192,
+            "byteOffset" : 9536
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4768,
+            "byteOffset" : 10728
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3042,
+            "byteOffset" : 15496
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 512,
+            "byteOffset" : 18540
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9986
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 19052,
+            "uri" : "chicken.bin"
+        }
+    ]
+}
