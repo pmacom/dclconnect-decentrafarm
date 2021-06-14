@@ -3,7 +3,7 @@ import { Chick } from './animals/chick'
 import { Chicken } from './animals/chicken'
 import { BoxHighlight } from './items/boxHighlight'
 import { ItemBucket } from './items/bucket'
-import { House, HouseRoof } from './items/house'
+import { House } from './items/house'
 import { PlantEntityCabbage, PlantEntityTomato } from './items/plant'
 import { RaisedBed01 } from './items/raisedBed01'
 import {
