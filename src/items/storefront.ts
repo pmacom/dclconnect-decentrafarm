@@ -4,7 +4,7 @@ export class Storefront extends Entity {
         transform: Transform
     ) {
         super()
-        this.addComponent(new GLTFShape('models/storefront.gltf'))
+        this.addComponent(new GLTFShape('models/enviornment/storefront.gltf'))
         this.addComponent(transform)
         engine.addEntity(this);
     }

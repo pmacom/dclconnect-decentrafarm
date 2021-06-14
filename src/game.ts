@@ -1,7 +1,7 @@
 import * as utils from '@dcl/ecs-scene-utils'
 import { BoxHighlight } from './items/boxHighlight'
 import { ItemBucket } from './items/bucket'
-import { House } from './items/house'
+import { House, HouseRoof } from './items/house'
 import { PlantEntityCabbage, PlantEntityTomato } from './items/plant'
 import { RaisedBed01 } from './items/raisedBed01'
 import {
@@ -68,15 +68,15 @@ seedTomato.setPosition(new Vector3(4,0,12))
 
 
 
-// const house = new House(new Transform({
-//   position: new Vector3(11,0,11),
-//   rotation: new Quaternion().setEuler(0,270,0)
-// }))
+const house = new House(new Transform({
+  position: new Vector3(11,0,11),
+  rotation: new Quaternion().setEuler(0,270,0)
+}))
 
-// const storefront = new Storefront(new Transform({
-//   position: new Vector3(-4,0,11),
-//   rotation: new Quaternion().setEuler(0,270,0)
-// }))
+const storefront = new Storefront(new Transform({
+  position: new Vector3(-4,0,11),
+  rotation: new Quaternion().setEuler(0,270,0)
+}))
 
 
 // const experiment = new Experiment(new Transform({

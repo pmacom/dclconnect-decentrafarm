@@ -1,6 +1,6 @@
 import { highlightDistance } from "src/items/boxHighlight"
 import { state } from "src/state"
-import { InteractibleEntity, findInteractibleEntityByName, isInteractible } from "./interactible"
+import { InteractibleEntity, isInteractible } from "./interactible"
 export abstract class HoldableEntity extends Entity {
     public abstract holdingPosition: Vector3
     public abstract holdingRotation: Quaternion

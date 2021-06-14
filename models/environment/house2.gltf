@@ -1,0 +1,234 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "SM_Bld_Farmhouse_02",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "House_collider",
+            "translation" : [
+                0,
+                1.4940663576126099,
+                3.3779897689819336
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "PolygonFarm_01_A.001",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5527864098548889
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Scene",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7
+                    },
+                    "indices" : 8
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "PolygonFarm_Texture_01_A",
+            "uri" : "textures/PolygonFarm_Texture_01_A.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 7526,
+            "max" : [
+                426.26708984375,
+                460.4423522949219,
+                17.351076126098633
+            ],
+            "min" : [
+                -429.2187805175781,
+                -427.043212890625,
+                -376.9274597167969
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 7526,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 7526,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 7526,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 12756,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 435,
+            "max" : [
+                4.1992573738098145,
+                2.279784917831421,
+                1
+            ],
+            "min" : [
+                -3.9412291049957275,
+                -1.7055636644363403,
+                -7.791136264801025
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 435,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 435,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 924,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 90312,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 90312,
+            "byteOffset" : 90312
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 60208,
+            "byteOffset" : 180624
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 60208,
+            "byteOffset" : 240832
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 25512,
+            "byteOffset" : 301040
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5220,
+            "byteOffset" : 326552
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5220,
+            "byteOffset" : 331772
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3480,
+            "byteOffset" : 336992
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1848,
+            "byteOffset" : 340472
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9986
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 342320,
+            "uri" : "house2.bin"
+        }
+    ]
+}

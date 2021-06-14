@@ -14,7 +14,7 @@ import {
 export abstract class Seeds extends HoldableEntity {
     public interactions: Array<string> = ["plantable"]
     public holdingPosition: Vector3 = new Vector3(.3,-.4,.5)
-    public holdingRotation: Quaternion = new Quaternion().setEuler(0,35,0)
+    public holdingRotation: Quaternion = new Quaternion().setEuler(0,55,0)
     public abstract seedTypeName: string
     public abstract entityReference: Entity
     public abstract modelReference: GLTFShape
