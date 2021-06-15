@@ -106,9 +106,12 @@ import { House } from './items/house'
 // const chick6 = new Chick()
 
 const house = new House(new Transform({
-  position: new Vector3(11,0,11),
+  position: new Vector3(-16,0,6.99),
   rotation: new Quaternion().setEuler(0,270,0)
 }))
+
+// const queryString = window.location.search;
+
 
 // const storefront = new Storefront(new Transform({
 //   position: new Vector3(-4,0,11),

@@ -24,18 +24,28 @@
                 0.7071067094802856
             ],
             "scale" : [
-                0.009999999776482582,
-                0.009999999776482582,
+                0.010050471872091293,
+                0.009147588163614273,
                 0.009999999776482582
+            ],
+            "translation" : [
+                -4.564222812652588,
+                1.626732587814331,
+                -1.6136276721954346
             ]
         },
         {
             "mesh" : 1,
             "name" : "house_posts_collider",
+            "scale" : [
+                1.0050472021102905,
+                1,
+                0.9147588610649109
+            ],
             "translation" : [
-                0,
-                1.4940663576126099,
-                3.3779897689819336
+                -4.564223289489746,
+                1.6267324686050415,
+                -1.613627552986145
             ]
         }
     ],
@@ -100,35 +110,35 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 1785,
+            "count" : 1783,
             "max" : [
-                400.9778137207031,
-                366.9999694824219,
-                -69.87495422363281
+                387.7605285644531,
+                39.8580322265625,
+                76.4105224609375
             ],
             "min" : [
-                -371.5683288574219,
-                128.1279296875,
-                -325.9920349121094
+                -384.7856140136719,
+                -123.13131713867188,
+                -179.70655822753906
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 1785,
+            "count" : 1783,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 1785,
+            "count" : 1783,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5126,
-            "count" : 1785,
+            "count" : 1783,
             "type" : "VEC2"
         },
         {
@@ -142,14 +152,14 @@
             "componentType" : 5126,
             "count" : 46,
             "max" : [
-                4.332700729370117,
-                2.28779935836792,
-                0.4320368766784668
+                4.200528144836426,
+                2.319011688232422,
+                0.5386068224906921
             ],
             "min" : [
-                -3.9412293434143066,
-                -0.7601441144943237,
-                -2.2909891605377197
+                -4.073401927947998,
+                -0.7289319038391113,
+                -1.425592064857483
             ],
             "type" : "VEC3"
         },
@@ -175,48 +185,48 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 21420,
+            "byteLength" : 21396,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 21420,
-            "byteOffset" : 21420
+            "byteLength" : 21396,
+            "byteOffset" : 21396
         },
         {
             "buffer" : 0,
-            "byteLength" : 14280,
-            "byteOffset" : 42840
+            "byteLength" : 14264,
+            "byteOffset" : 42792
         },
         {
             "buffer" : 0,
-            "byteLength" : 14280,
-            "byteOffset" : 57120
+            "byteLength" : 14264,
+            "byteOffset" : 57056
         },
         {
             "buffer" : 0,
             "byteLength" : 5052,
-            "byteOffset" : 71400
+            "byteOffset" : 71320
         },
         {
             "buffer" : 0,
             "byteLength" : 552,
-            "byteOffset" : 76452
+            "byteOffset" : 76372
         },
         {
             "buffer" : 0,
             "byteLength" : 552,
-            "byteOffset" : 77004
+            "byteOffset" : 76924
         },
         {
             "buffer" : 0,
             "byteLength" : 368,
-            "byteOffset" : 77556
+            "byteOffset" : 77476
         },
         {
             "buffer" : 0,
             "byteLength" : 132,
-            "byteOffset" : 77924
+            "byteOffset" : 77844
         }
     ],
     "samplers" : [
@@ -227,7 +237,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 78056,
+            "byteLength" : 77976,
             "uri" : "house_posts.bin"
         }
     ]

@@ -1,6 +1,45 @@
 import * as utils from '@dcl/ecs-scene-utils'
 import { TriggerBox } from 'src/components/triggerBox'
 
+
+const backPosition = new Vector3(
+    -4.56337,
+    8.31169,
+    2.24879,
+)
+
+const frontPosition = new Vector3(
+    -4.52005,
+    2.80547,
+    2.21851,
+)
+
+const postsPosition = new Vector3(
+    -4.56422,
+    1.61363,
+    1.62673,
+)
+
+const roofPosition = new Vector3(
+    -4.85983,
+    4.2551,
+    4.35377,
+)
+
+const side1Position = new Vector3(
+    -0.639301,
+    5.61072,
+    2.28239,
+)
+
+const side2Position = new Vector3(
+    -8.37539,
+    5.58556,
+    2.12442,
+)
+
+
+
 export class House extends Entity {
     public interiorZone: Entity = new Entity()
 
@@ -13,8 +52,10 @@ export class House extends Entity {
             triggerLayers: ["houseVisibilityRef"],
             withCollisions: false,
             enableDebug: true,
-        })
+        }),
+        roofPosition,
     )
+
     // public front: BuildingPiece = new BuildingPiece('models/environment/house_front.gltf')
     // public side1: BuildingPiece = new BuildingPiece('models/environment/house_side1.gltf')
     // public side2: BuildingPiece = new BuildingPiece('models/environment/house_side2.gltf')
@@ -28,7 +69,7 @@ export class House extends Entity {
         transform: Transform
     ) {
         super()
-        this.addComponent(new GLTFShape('models/environment/house.gltf'))
+        this.addComponent(new GLTFShape('models/environment/house_floor.gltf'))
         this.addComponent(transform)
 
         this.roof.setParent(this)
@@ -86,9 +127,9 @@ export class BuildingPiece extends Entity {
     constructor(
         modelSrc: string,
         public triggerBox: TriggerBox,
+        public position: Vector3
     ) {
         super()
-        let { position } = this.getComponentOrCreate(Transform)
         this.addComponent(new GLTFShape(modelSrc))
         this.addComponent(new BuildingHiddableEntity())
         this.triggerBox.setPosition(position)
@@ -199,6 +240,7 @@ const hitPointToVector3 = (hitPoint: ReadOnlyVector3) : Vector3 => {
 
 const onReverseRay = (e: RaycastHitEntities): void => {
     if(e.entities[0] && e.entities[0].hitPoint){
+        debugger;
         houseVisibilityRef.setPosition(hitPointToVector3(e.entities[0].hitPoint))
     }
 }
