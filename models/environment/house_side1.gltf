@@ -8,7 +8,8 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1
             ]
         }
     ],
@@ -26,6 +27,15 @@
                 0.009999999776482582,
                 0.009999999776482582,
                 0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "house_side1_collider",
+            "translation" : [
+                0,
+                1.4940663576126099,
+                3.3779897689819336
             ]
         }
     ],
@@ -56,6 +66,19 @@
                     },
                     "indices" : 4,
                     "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7
+                    },
+                    "indices" : 8
                 }
             ]
         }
@@ -113,6 +136,40 @@
             "componentType" : 5123,
             "count" : 1671,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 12,
+            "max" : [
+                4.199257850646973,
+                2.2848668098449707,
+                -2.2564423084259033
+            ],
+            "min" : [
+                3.8181846141815186,
+                -1.7055637836456299,
+                -7.783755302429199
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 12,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 12,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 18,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -140,6 +197,26 @@
             "buffer" : 0,
             "byteLength" : 3342,
             "byteOffset" : 36400
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 39744
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 39888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 40032
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 40128
         }
     ],
     "samplers" : [
@@ -150,7 +227,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 39744,
+            "byteLength" : 40164,
             "uri" : "house_side1.bin"
         }
     ]

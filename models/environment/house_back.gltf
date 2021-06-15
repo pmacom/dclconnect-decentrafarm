@@ -8,7 +8,8 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1
             ]
         }
     ],
@@ -26,6 +27,15 @@
                 0.009999999776482582,
                 0.009999999776482582,
                 0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "house_back_collider",
+            "translation" : [
+                0,
+                1.4940663576126099,
+                3.3779897689819336
             ]
         }
     ],
@@ -56,6 +66,19 @@
                     },
                     "indices" : 4,
                     "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7
+                    },
+                    "indices" : 8
                 }
             ]
         }
@@ -113,6 +136,40 @@
             "componentType" : 5123,
             "count" : 2544,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 20,
+            "max" : [
+                4.09852409362793,
+                2.279784917831421,
+                -7.288767337799072
+            ],
+            "min" : [
+                -3.9412293434143066,
+                -1.7053353786468506,
+                -7.783796787261963
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 20,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 24,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -140,6 +197,26 @@
             "buffer" : 0,
             "byteLength" : 5088,
             "byteOffset" : 56240
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 240,
+            "byteOffset" : 61328
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 240,
+            "byteOffset" : 61568
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 160,
+            "byteOffset" : 61808
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 61968
         }
     ],
     "samplers" : [
@@ -150,7 +227,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 61328,
+            "byteLength" : 62016,
             "uri" : "house_back.bin"
         }
     ]

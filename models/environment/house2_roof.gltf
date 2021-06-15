@@ -8,14 +8,15 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "SM_Bld_Farmhouse_02.001",
+            "name" : "house_roof",
             "rotation" : [
                 0.7071068286895752,
                 0,
@@ -26,6 +27,15 @@
                 0.009999999776482582,
                 0.009999999776482582,
                 0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "house_roof_collider",
+            "translation" : [
+                0,
+                1.4940663576126099,
+                3.3779897689819336
             ]
         }
     ],
@@ -56,6 +66,19 @@
                     },
                     "indices" : 4,
                     "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.006",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7
+                    },
+                    "indices" : 8
                 }
             ]
         }
@@ -113,6 +136,40 @@
             "componentType" : 5123,
             "count" : 7605,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 57,
+            "max" : [
+                4.368223667144775,
+                5.142580986022949,
+                0.42149829864501953
+            ],
+            "min" : [
+                -4.125571250915527,
+                1.788317322731018,
+                -7.902040004730225
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 57,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 57,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 81,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -140,6 +197,26 @@
             "buffer" : 0,
             "byteLength" : 15210,
             "byteOffset" : 178280
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 684,
+            "byteOffset" : 193492
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 684,
+            "byteOffset" : 194176
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 456,
+            "byteOffset" : 194860
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 162,
+            "byteOffset" : 195316
         }
     ],
     "samplers" : [
@@ -150,7 +227,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 193492,
+            "byteLength" : 195480,
             "uri" : "house2_roof.bin"
         }
     ]

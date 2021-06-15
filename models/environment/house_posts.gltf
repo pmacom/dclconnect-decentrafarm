@@ -8,14 +8,15 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "house_floor.001",
+            "name" : "house_posts",
             "rotation" : [
                 0.7071068286895752,
                 0,
@@ -26,6 +27,15 @@
                 0.009999999776482582,
                 0.009999999776482582,
                 0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "house_posts_collider",
+            "translation" : [
+                0,
+                1.4940663576126099,
+                3.3779897689819336
             ]
         }
     ],
@@ -56,6 +66,19 @@
                     },
                     "indices" : 4,
                     "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.010",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7
+                    },
+                    "indices" : 8
                 }
             ]
         }
@@ -113,6 +136,40 @@
             "componentType" : 5123,
             "count" : 2526,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 46,
+            "max" : [
+                4.332700729370117,
+                2.28779935836792,
+                0.4320368766784668
+            ],
+            "min" : [
+                -3.9412293434143066,
+                -0.7601441144943237,
+                -2.2909891605377197
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 46,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 46,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 66,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -140,6 +197,26 @@
             "buffer" : 0,
             "byteLength" : 5052,
             "byteOffset" : 71400
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 552,
+            "byteOffset" : 76452
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 552,
+            "byteOffset" : 77004
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 368,
+            "byteOffset" : 77556
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 132,
+            "byteOffset" : 77924
         }
     ],
     "samplers" : [
@@ -150,7 +227,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 76452,
+            "byteLength" : 78056,
             "uri" : "house_posts.bin"
         }
     ]

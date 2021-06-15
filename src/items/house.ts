@@ -4,7 +4,7 @@ import { TriggerBox } from 'src/components/triggerBox'
 export class House extends Entity {
     public interiorZone: Entity = new Entity()
 
-    public roof: BuildingPiece = new BuildingPiece('models/environment/house2_roof.gltf')
+    public roof: BuildingPiece = new BuildingPiece('models/environment/house_roof.gltf')
     public front: BuildingPiece = new BuildingPiece('models/environment/house_front.gltf')
     public side1: BuildingPiece = new BuildingPiece('models/environment/house_side1.gltf')
     public side2: BuildingPiece = new BuildingPiece('models/environment/house_side2.gltf')
@@ -21,12 +21,12 @@ export class House extends Entity {
         this.addComponent(new GLTFShape('models/environment/house.gltf'))
         this.addComponent(transform)
 
-        // this.roof.setParent(this)
-        // this.front.setParent(this)
-        // this.side1.setParent(this)
-        // this.side2.setParent(this)
-        // this.posts.setParent(this)
-        // this.back.setParent(this)
+        this.roof.setParent(this)
+        this.front.setParent(this)
+        this.side1.setParent(this)
+        this.side2.setParent(this)
+        this.posts.setParent(this)
+        this.back.setParent(this)
         this.interiorZone.setParent(this)
 
         onCameraModeChangedObservable.add(({ cameraMode }) => {
@@ -66,8 +66,8 @@ export class House extends Entity {
         })
         
         this.triggerComponent = new utils.TriggerComponent(triggerBox, {
-            onCameraEnter: () => this.roof.hide(),
-            onCameraExit: () => this.roof.show(),
+            // onCameraEnter: () => this.roof.hide(),
+            // onCameraExit: () => this.roof.show(),
             // enableDebug: true
         })
         this.interiorZone.addComponent(this.triggerComponent)
@@ -83,7 +83,8 @@ export class BuildingPiece extends Entity {
     public isBuildingPiece: boolean = true
 
     constructor(
-        modelSrc: string
+        modelSrc: string,
+        // triggerBox: TriggerBox
     ) {
         super()
         this.addComponent(new GLTFShape(modelSrc))
@@ -132,105 +133,69 @@ const colliderCheckerShape = new utils.TriggerBoxShape(
 // ))
 // engine.addEntity(colliderChecker)
 
-let tbox = new TriggerBox({
+let triggerSize = 1
+let houseVisibilityRef = new TriggerBox({
   position: new Vector3(0,0,0),
-  scale: new Vector3(2,2,2),
-  layerName: "zone1",
-  triggerLayers: ["buildingHideable"],
+  scale: new Vector3(triggerSize, triggerSize, triggerSize),
+  layerName: "houseVisibilityRef",
+  triggerLayers: ["housePiece"],
   withCollisions: false,
   enableDebug: true,
 })
 
-class testObject extends Entity {
-    public boxShape: BoxShape = new BoxShape()
+// class testObject extends Entity {
+//     public boxShape: BoxShape = new BoxShape()
 
-    constructor(){
-        super()
+//     constructor(){
+//         super()
         
-        this.addComponent(this.boxShape)
-        this.boxShape.withCollisions = false
-        this.addComponent(new Transform({
-            // position: new Vector3(1,5,1),
-            rotation: new Quaternion().setEuler(45,45,45),
-            scale: new Vector3(.01, .01, .01)
-        }))
-        engine.addEntity(this)
-    }
-}
+//         this.addComponent(this.boxShape)
+//         this.boxShape.withCollisions = false
+//         this.addComponent(new Transform({
+//             // position: new Vector3(1,5,1),
+//             rotation: new Quaternion().setEuler(45,45,45),
+//             scale: new Vector3(.01, .01, .01)
+//         }))
+//         engine.addEntity(this)
+//     }
+// }
 
-const t1 = new testObject()
-const t2 = new testObject()
+// const t1 = new testObject()
+// const t2 = new testObject()
 
 export class HouseCameraHidder implements ISystem {
     update(dt: number) {
-  
-      // On Hover
-      debounceTimer += dt
-      if(debounceTimer >= debounceSpeed){
-        physicsCast.hitAll(
-        physicsCast.getRayFromCamera(1000),
-            (e) => {
-                let target = this.hitPointToVector3(e.entities[0].hitPoint)
-                let direction = this.reverseDirection(e.ray.direction)
-
-                let initialRay: Ray = {
-                    origin: target,
-                    distance: 1000,
-                    direction,
-                }
-              
-                physicsCast.hitAll(
-                    initialRay,
-                    (e) => {
-                        tbox.setPosition(this.hitPointToVector3(e.entities[0].hitPoint))
-                        // colliderCheckerShape.position.x = e.entities[0].hitPoint.x
-                        // colliderCheckerShape.position.y = e.entities[0].hitPoint.y
-                        // colliderCheckerShape.position.z = e.entities[0].hitPoint.z
-
-                        // tbox.setPosition(new Vector3(1,1,1))
-
-                        // colliderChecker.addComponentOrReplace(new Transform({
-                        //     position: target,
-                        //     scale: new Vector3(.5, .5, .5)
-                        // }))
-
-                        // t2.addComponentOrReplace(new Transform({
-                        //     position: new Vector3(
-                        //         e.entities[0].hitPoint.x,
-                        //         e.entities[0].hitPoint.y,
-                        //         e.entities[0].hitPoint.z,
-                        //     )
-                        // }))
-                    },
-                    0
-                )
-
-                //let o = Vector3.Distance(target, cam)
-                // log('TESTING')
-                // log(o)
-                // debugger
-
-
-            // if(e.entity.entityId){
-            //     log(e.entity.entityId)
-            // }
-          },
-          Math.random()*100
-        )
-        debounceTimer = 0;
-      }
+        debounceTimer += dt
+        if(debounceTimer >= debounceSpeed){
+            let distance = 1000
+            let ray = physicsCast.getRayFromCamera(distance)
+            physicsCast.hitAll(ray, onNormalRay, Math.random()*100)
+            debounceTimer = 0;
+        }
     }
+}
+engine.addSystem(new HouseCameraHidder())
 
-    onNormalRay(e: RaycastHitEntities){
-        
-    }
+const reverseDirection = (direction: ReadOnlyVector3) : Vector3 => {
+    return new Vector3(direction.x, direction.y, direction.z).negate()
+}
 
-    hitPointToVector3(hitPoint: ReadOnlyVector3) : Vector3 {
-        return new Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
+const onNormalRay = (e: RaycastHitEntities): void => {
+    if(e.entities[0] && e.entities[0].hitPoint){
+        let target = hitPointToVector3(e.entities[0].hitPoint)
+        let direction = reverseDirection(e.ray.direction)
+        let distance = 1000
+        let initialRay: Ray = { origin: target, distance, direction }
+        physicsCast.hitAll(initialRay, onReverseRay, Math.random()*100)
     }
+}
 
-    reverseDirection(direction: ReadOnlyVector3) : Vector3 {
-        return new Vector3(direction.x, direction.y, direction.z).negate()
+const hitPointToVector3 = (hitPoint: ReadOnlyVector3) : Vector3 => {
+    return new Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
+}
+
+const onReverseRay = (e: RaycastHitEntities): void => {
+    if(e.entities[0] && e.entities[0].hitPoint){
+        houseVisibilityRef.setPosition(hitPointToVector3(e.entities[0].hitPoint))
     }
-  }
-  engine.addSystem(new HouseCameraHidder())
+}
