@@ -4,12 +4,22 @@ import { TriggerBox } from 'src/components/triggerBox'
 export class House extends Entity {
     public interiorZone: Entity = new Entity()
 
-    public roof: BuildingPiece = new BuildingPiece('models/environment/house_roof.gltf')
-    public front: BuildingPiece = new BuildingPiece('models/environment/house_front.gltf')
-    public side1: BuildingPiece = new BuildingPiece('models/environment/house_side1.gltf')
-    public side2: BuildingPiece = new BuildingPiece('models/environment/house_side2.gltf')
-    public posts: BuildingPiece = new BuildingPiece('models/environment/house_posts.gltf')
-    public back: BuildingPiece = new BuildingPiece('models/environment/house_back.gltf')
+    public roof: BuildingPiece = new BuildingPiece(
+        'models/environment/house_roof.gltf',
+        new TriggerBox({
+            position: new Vector3(0, 0, 0),
+            scale: new Vector3(5,2,1),
+            layerName: "housePiece",
+            triggerLayers: ["houseVisibilityRef"],
+            withCollisions: false,
+            enableDebug: true,
+        })
+    )
+    // public front: BuildingPiece = new BuildingPiece('models/environment/house_front.gltf')
+    // public side1: BuildingPiece = new BuildingPiece('models/environment/house_side1.gltf')
+    // public side2: BuildingPiece = new BuildingPiece('models/environment/house_side2.gltf')
+    // public posts: BuildingPiece = new BuildingPiece('models/environment/house_posts.gltf')
+    // public back: BuildingPiece = new BuildingPiece('models/environment/house_back.gltf')
 
     private triggerComponent: utils.TriggerComponent | null = null
     private handleVisibility: boolean = Camera.instance.cameraMode == CameraMode.ThirdPerson
@@ -22,11 +32,11 @@ export class House extends Entity {
         this.addComponent(transform)
 
         this.roof.setParent(this)
-        this.front.setParent(this)
-        this.side1.setParent(this)
-        this.side2.setParent(this)
-        this.posts.setParent(this)
-        this.back.setParent(this)
+        // this.front.setParent(this)
+        // this.side1.setParent(this)
+        // this.side2.setParent(this)
+        // this.posts.setParent(this)
+        // this.back.setParent(this)
         this.interiorZone.setParent(this)
 
         onCameraModeChangedObservable.add(({ cameraMode }) => {
@@ -45,15 +55,6 @@ export class House extends Entity {
             position: new Vector3(0,2,-1.5),
             // scale: new Vector3(6,3,5), // scale: new Vector3(6,2,1),
         }))
-        
-
-        /* Set Material For Zone */
-        // this.zoneMaterial = new Material()
-        // this.zoneMaterial.albedoColor = new Color4(1, 0, 0, 0.5)
-        // this.zoneMaterial.metallic = 1
-        // this.zoneMaterial.roughness = 1
-        // this.zoneMaterial.transparencyMode = 3
-        // this.interiorZone.addComponent(this.zoneMaterial)
 
         /* Set Trigger For Zone */
         let triggerBox = new utils.TriggerBoxShape(
@@ -84,11 +85,13 @@ export class BuildingPiece extends Entity {
 
     constructor(
         modelSrc: string,
-        // triggerBox: TriggerBox
+        public triggerBox: TriggerBox,
     ) {
         super()
+        let { position } = this.getComponentOrCreate(Transform)
         this.addComponent(new GLTFShape(modelSrc))
         this.addComponent(new BuildingHiddableEntity())
+        this.triggerBox.setPosition(position)
         engine.addEntity(this);
     }
 
