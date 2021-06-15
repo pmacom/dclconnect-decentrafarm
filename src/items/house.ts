@@ -1,4 +1,5 @@
 import * as utils from '@dcl/ecs-scene-utils'
+import { TriggerBox } from 'src/components/triggerBox'
 
 export class House extends Entity {
     public interiorZone: Entity = new Entity()
@@ -78,8 +79,8 @@ export class BuildingHiddableEntity {
   constructor() {}
 }
 
-
 export class BuildingPiece extends Entity {
+    public isBuildingPiece: boolean = true
 
     constructor(
         modelSrc: string
@@ -116,20 +117,29 @@ const colliderCheckerShape = new utils.TriggerBoxShape(
     new Vector3(0,0,0),
 )
 
-const colliderChecker = new Entity()
-const colliderCheckerBoxShape = new BoxShape()
-colliderCheckerBoxShape.withCollisions = false
-colliderChecker.addComponent(colliderCheckerBoxShape)
-colliderChecker.addComponent(new utils.TriggerComponent(
-    colliderCheckerShape,
-    {
-        onTriggerEnter: () => {
-            log('something has entered')
-        },
-        enableDebug: true,
-    }
-))
-engine.addEntity(colliderChecker)
+// const colliderChecker = new Entity()
+// const colliderCheckerBoxShape = new BoxShape()
+// colliderCheckerBoxShape.withCollisions = false
+// colliderChecker.addComponent(colliderCheckerBoxShape)
+// colliderChecker.addComponent(new utils.TriggerComponent(
+//     colliderCheckerShape,
+//     {
+//         onTriggerEnter: () => {
+//             log('something has entered')
+//         },
+//         enableDebug: true,
+//     }
+// ))
+// engine.addEntity(colliderChecker)
+
+let tbox = new TriggerBox({
+  position: new Vector3(0,0,0),
+  scale: new Vector3(2,2,2),
+  layerName: "zone1",
+  triggerLayers: ["buildingHideable"],
+  withCollisions: false,
+  enableDebug: true,
+})
 
 class testObject extends Entity {
     public boxShape: BoxShape = new BoxShape()
@@ -160,47 +170,29 @@ export class HouseCameraHidder implements ISystem {
         physicsCast.hitAll(
         physicsCast.getRayFromCamera(1000),
             (e) => {
-                log(e)
+                let target = this.hitPointToVector3(e.entities[0].hitPoint)
+                let direction = this.reverseDirection(e.ray.direction)
 
-                let target = new Vector3(
-                    e.entities[0].hitPoint.x,
-                    e.entities[0].hitPoint.y,
-                    e.entities[0].hitPoint.z,
-                )
-
-                t1.addComponentOrReplace(new Transform({
-                    position: target
-                }))
-
-                let reversed = new Vector3(
-                    e.ray.direction.x*-1,
-                    e.ray.direction.y*-1,
-                    e.ray.direction.z*-1,
-                )
-
-                let ray: Ray = {
+                let initialRay: Ray = {
                     origin: target,
-                    direction: reversed,
                     distance: 1000,
+                    direction,
                 }
-
-                // colliderCheckerShape
               
                 physicsCast.hitAll(
-                    ray,
+                    initialRay,
                     (e) => {
+                        tbox.setPosition(this.hitPointToVector3(e.entities[0].hitPoint))
                         // colliderCheckerShape.position.x = e.entities[0].hitPoint.x
                         // colliderCheckerShape.position.y = e.entities[0].hitPoint.y
                         // colliderCheckerShape.position.z = e.entities[0].hitPoint.z
 
-                        colliderChecker.addComponentOrReplace(new Transform({
-                            position: new Vector3(
-                                e.entities[0].hitPoint.x,
-                                e.entities[0].hitPoint.y,
-                                e.entities[0].hitPoint.z,
-                            ),
-                            scale: new Vector3(.5, .5, .5)
-                        }))
+                        // tbox.setPosition(new Vector3(1,1,1))
+
+                        // colliderChecker.addComponentOrReplace(new Transform({
+                        //     position: target,
+                        //     scale: new Vector3(.5, .5, .5)
+                        // }))
 
                         // t2.addComponentOrReplace(new Transform({
                         //     position: new Vector3(
@@ -227,6 +219,18 @@ export class HouseCameraHidder implements ISystem {
         )
         debounceTimer = 0;
       }
+    }
+
+    onNormalRay(e: RaycastHitEntities){
+        
+    }
+
+    hitPointToVector3(hitPoint: ReadOnlyVector3) : Vector3 {
+        return new Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
+    }
+
+    reverseDirection(direction: ReadOnlyVector3) : Vector3 {
+        return new Vector3(direction.x, direction.y, direction.z).negate()
     }
   }
   engine.addSystem(new HouseCameraHidder())

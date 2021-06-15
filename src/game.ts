@@ -1,62 +1,85 @@
-import * as utils from '@dcl/ecs-scene-utils'
-import { Chick } from './animals/chick'
-import { Chicken } from './animals/chicken'
-import { BoxHighlight } from './items/boxHighlight'
-import { ItemBucket } from './items/bucket'
+// import * as utils from '@dcl/ecs-scene-utils'
+// import { Chick } from './animals/chick'
+// import { Chicken } from './animals/chicken'
+import { TriggerBox } from './components/triggerBox'
+// import { BoxHighlight } from './items/boxHighlight'
+// import { ItemBucket } from './items/bucket'
 import { House } from './items/house'
-import { PlantEntityCabbage, PlantEntityTomato } from './items/plant'
-import { RaisedBed01 } from './items/raisedBed01'
-import {
-  SeedsEntityCabbage,
-  SeedsEntityCarrot,
-  SeedsEntityCucumber,
-  SeedsEntityOnion,
-  SeedsEntityPotato,
-  SeedsEntityPumpkin,
-  SeedsEntityTomato
-} from './items/seeds'
-import { Storefront } from './items/storefront'
-import { WateringCan } from './items/wateringCan'
-import { WoodenStand } from './items/woodenStand'
+// import { PlantEntityCabbage, PlantEntityTomato } from './items/plant'
+// import { RaisedBed01 } from './items/raisedBed01'
+// import {
+//   SeedsEntityCabbage,
+//   SeedsEntityCarrot,
+//   SeedsEntityCucumber,
+//   SeedsEntityOnion,
+//   SeedsEntityPotato,
+//   SeedsEntityPumpkin,
+//   SeedsEntityTomato
+// } from './items/seeds'
+// import { Storefront } from './items/storefront'
+// import { WateringCan } from './items/wateringCan'
+// import { WoodenStand } from './items/woodenStand'
 
 // import { Experiment } from "./items/experiment"
 
-const bucket1 = new ItemBucket(new Transform({
-  position: new Vector3(8,0,8)
-}))
+// const bucket1 = new ItemBucket(new Transform({
+//   position: new Vector3(8,0,8)
+// }))
 
-const wateringCan = new WateringCan(new Transform({
-  position: new Vector3(4,0,4)
-}))
+// const wateringCan = new WateringCan(new Transform({
+//   position: new Vector3(4,0,4)
+// }))
 
-const raisedBed01 = new RaisedBed01(new Transform({
-  position: new Vector3(2,0,4)
-}))
-
-
-
-const seedCabbage = new SeedsEntityCabbage()
-seedCabbage.setPosition(new Vector3(4,0,6))
-
-const seedCarrot = new SeedsEntityCarrot()
-seedCarrot.setPosition(new Vector3(4,0,7))
-
-const seedCucumber = new SeedsEntityCucumber()
-seedCucumber.setPosition(new Vector3(4,0,8))
-
-const seedOnion = new SeedsEntityOnion()
-seedOnion.setPosition(new Vector3(4,0,9))
-
-const seedPotato = new SeedsEntityPotato()
-seedPotato.setPosition(new Vector3(4,0,10))
-
-const seedPumpkin = new SeedsEntityPumpkin()
-seedPumpkin.setPosition(new Vector3(4,0,11))
-
-const seedTomato = new SeedsEntityTomato()
-seedTomato.setPosition(new Vector3(4,0,12))
+// const raisedBed01 = new RaisedBed01(new Transform({
+//   position: new Vector3(2,0,4)
+// }))
 
 
+
+// const seedCabbage = new SeedsEntityCabbage()
+// seedCabbage.setPosition(new Vector3(4,0,6))
+
+// const seedCarrot = new SeedsEntityCarrot()
+// seedCarrot.setPosition(new Vector3(4,0,7))
+
+// const seedCucumber = new SeedsEntityCucumber()
+// seedCucumber.setPosition(new Vector3(4,0,8))
+
+// const seedOnion = new SeedsEntityOnion()
+// seedOnion.setPosition(new Vector3(4,0,9))
+
+// const seedPotato = new SeedsEntityPotato()
+// seedPotato.setPosition(new Vector3(4,0,10))
+
+// const seedPumpkin = new SeedsEntityPumpkin()
+// seedPumpkin.setPosition(new Vector3(4,0,11))
+
+// const seedTomato = new SeedsEntityTomato()
+// seedTomato.setPosition(new Vector3(4,0,12))
+
+
+
+
+// let tbox = new TriggerBox({
+//   position: new Vector3(5,1,5),
+//   scale: new Vector3(1,1,1),
+//   layerName: "zone1",
+//   triggerLayers: ["someItem"],
+//   withCollisions: false,
+//   enableDebug: true,
+// })
+
+// let tbox2 = new TriggerBox({
+//   position: new Vector3(0,0,0),
+//   scale: new Vector3(1,1,1),
+//   layerName: "zone2",
+//   triggerLayers: ["zone1"],
+//   withCollisions: false,
+//   enableDebug: true,
+// })
+
+// tbox2.setParent(Attachable.FIRST_PERSON_CAMERA)
+// engine.addEntity(tbox2)
 
 
 // const tomato1 = new PlantEntityTomato()
@@ -87,10 +110,10 @@ const house = new House(new Transform({
   rotation: new Quaternion().setEuler(0,270,0)
 }))
 
-const storefront = new Storefront(new Transform({
-  position: new Vector3(-4,0,11),
-  rotation: new Quaternion().setEuler(0,270,0)
-}))
+// const storefront = new Storefront(new Transform({
+//   position: new Vector3(-4,0,11),
+//   rotation: new Quaternion().setEuler(0,270,0)
+// }))
 
 
 // const experiment = new Experiment(new Transform({
