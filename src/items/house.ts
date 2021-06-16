@@ -46,8 +46,8 @@ export class House extends Entity {
     public roof: BuildingPiece = new BuildingPiece(
         'models/environment/house_roof.gltf',
         new TriggerBox({
-            position: new Vector3(0, 0, 0),
-            scale: new Vector3(5,2,1),
+            position: new Vector3(1,1,1),
+            scale: new Vector3(20, 1, 20),
             layerName: "housePiece",
             triggerLayers: ["houseVisibilityRef"],
             withCollisions: false,
@@ -132,7 +132,9 @@ export class BuildingPiece extends Entity {
         super()
         this.addComponent(new GLTFShape(modelSrc))
         this.addComponent(new BuildingHiddableEntity())
+        let transform = this.getComponentOrCreate(Transform).position
         this.triggerBox.setPosition(position)
+        this.triggerBox.setParent(this)
         engine.addEntity(this);
     }
 

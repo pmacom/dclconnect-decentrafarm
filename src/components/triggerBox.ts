@@ -43,7 +43,10 @@ export class TriggerBox extends Entity {
         super()
         let enableDebug = !!settings.enableDebug
         this.addComponent(new SphereShape())
-        this.triggerBoxShape = new utils.TriggerBoxShape(settings.scale, settings.position)
+        this.triggerBoxShape = new utils.TriggerBoxShape(
+            settings.scale,
+            new Vector3(5,5,5), // settings.position
+        )
         this.triggerBoxComponent = new utils.TriggerComponent(
             this.triggerBoxShape,
             {
@@ -55,27 +58,23 @@ export class TriggerBox extends Entity {
             }
         )
         this.triggerBoxEntity.setParent(this)
-        this.addComponent(this.triggerBoxComponent)
+        this.triggerBoxEntity.addComponent(this.triggerBoxComponent)
+        // this.setPosition(settings.position)
+        // this.setScale(settings.scale)
         engine.addEntity(this)
         // debugger;
     }
 
     setPosition(position: Vector3){
-        // let parent = this.getParent() as Entity
-        // if(parent && parent.name !== "scene"){
-        //     // let parentPos = parent.getComponent(Transform).position
-        //     debugger;
-        //     // let pos = Vector3.Add(parentPos, position)
-        //     this.triggerBoxShape.position.set(position.x, position.y, position.z)
-        // }
-        this.triggerBoxShape.position.set(position.x, position.y, position.z)
+        let {x, y, z} = position
+        // this.getComponentOrCreate(Transform).position.set(x, y, z)
+        this.triggerBoxShape.position.set(x, y, z)
     }
 
     setScale(scale: Vector3){
-        // let {x, y, z} = scale
-        // let transform = this.getComponent(Transform)
-        this.triggerBoxShape.size = new Vector3(scale.x, scale.y, scale.z)
-        // transform.scale = new Vector3(x, y, z)
+        let {x, y, z} = scale
+        this.triggerBoxShape.size.set(scale.x, scale.y, scale.z)
+        // this.getComponentOrCreate(Transform).scale.set(x, y, z)
     }
 
     onTriggerEnter(): void {
