@@ -2,9 +2,25 @@
 // import { Chick } from './animals/chick'
 // import { Chicken } from './animals/chicken'
 import { TriggerBox } from './components/triggerBox'
+
+
+
+
+import { House } from './items/house/house'
+const house = new House(new Transform({
+  position: new Vector3(-16,0,6.99),
+  rotation: new Quaternion().setEuler(0,270,0)
+}))
+
+
+
+
+
 // import { BoxHighlight } from './items/boxHighlight'
 // import { ItemBucket } from './items/bucket'
-import { House } from './items/house'
+// import { House } from './items/house'
+
+
 // import { PlantEntityCabbage, PlantEntityTomato } from './items/plant'
 // import { RaisedBed01 } from './items/raisedBed01'
 // import {
@@ -105,10 +121,10 @@ import { House } from './items/house'
 // const chick5 = new Chick()
 // const chick6 = new Chick()
 
-const house = new House(new Transform({
-  position: new Vector3(-16,0,6.99),
-  rotation: new Quaternion().setEuler(0,270,0)
-}))
+// const house = new House(new Transform({
+//   position: new Vector3(-16,0,6.99),
+//   rotation: new Quaternion().setEuler(0,270,0)
+// }))
 
 // const queryString = window.location.search;
 
