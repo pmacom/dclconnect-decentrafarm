@@ -31,8 +31,9 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
-            "name" : "Plant_Tomato.004",
+            "name" : "Plant Tomato",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,

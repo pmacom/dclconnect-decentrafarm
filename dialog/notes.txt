@@ -1,0 +1,30 @@
+OldMan:
+    Hello? What do you want?
+        > Whats up with this help wanted sign?
+        > Your house is bringing my property value down. Fix it up.
+        > Nothing. Goodbye
+    Well, these hands of mine ain't what they used to be. I just can't muster up the energy to do even the most basic of tasks. This place has been fallin' apart. Just like me.
+        > I can lend a hand if you want!
+        > Pay me and I'll do some stuff for you. Nothing crazy though.
+        > Well, thats too bad Ol' timer. See you later!
+    I could really use a help around the ol' farm. If you're interested.
+        > What can I do?
+        > I work for money. What are you offering?
+        > Nah thats okay, I prefer to work in places that don't smell this bad.
+    If anything is to ever grow out there again, it's going to need to be weeded and cleaned up a bit. Remove all the stones, weeds and small trees. Leave the big one. That's my family tree. I'll go before she does.
+        > Ok. Stones. Weeds. Small trees. Got it.
+        > How much does this pay?
+        > Sounds like too much work for me. I'm just in decentraland for the art galleries.
+    
+    How's it going out there? Any luck?
+        > I'm still working on it. Do you have a bathroom?
+            There's an outhouse out back.
+        > All done. Whats next?
+            You can probably put together a small raised bed with the logs you stacked. Here's the instructions to build it. Take it over to my toolstation. It should be pretty straight forward.
+        > Are you going to pay me now?
+            I don't get paid for another few days
+
+    What's up with that big tree?
+        She bears fruit once a season, and she's on her last legs. I'm hoping for just one last fruit harvest before I retire. But She won't bear fruit unless it gets what it needs.
+
+

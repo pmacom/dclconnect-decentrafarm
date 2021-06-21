@@ -8,13 +8,20 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
+            "name" : "plant_tomato_S3_crop"
+        },
+        {
+            "children" : [
+                0
+            ],
+            "mesh" : 1,
             "name" : "plant_tomato_S3",
             "rotation" : [
                 0.7071068286895752,
@@ -31,8 +38,9 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
-            "name" : "Plant_Tomato.004",
+            "name" : "Plant Tomato",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -44,7 +52,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Scene.001",
+            "name" : "Scene.002",
             "primitives" : [
                 {
                     "attributes" : {
@@ -53,6 +61,20 @@
                         "TEXCOORD_0" : 2
                     },
                     "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Scene.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
                     "material" : 0
                 }
             ]
@@ -75,6 +97,40 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
+            "count" : 471,
+            "max" : [
+                29.189598083496094,
+                21.629512786865234,
+                -28.85816764831543
+            ],
+            "min" : [
+                -9.787921905517578,
+                -25.543140411376953,
+                -79.36194610595703
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 471,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 471,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 1875,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
             "count" : 279,
             "max" : [
                 52.28927230834961,
@@ -89,19 +145,19 @@
             "type" : "VEC3"
         },
         {
-            "bufferView" : 1,
+            "bufferView" : 5,
             "componentType" : 5126,
             "count" : 279,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 2,
+            "bufferView" : 6,
             "componentType" : 5126,
             "count" : 279,
             "type" : "VEC2"
         },
         {
-            "bufferView" : 3,
+            "bufferView" : 7,
             "componentType" : 5123,
             "count" : 828,
             "type" : "SCALAR"
@@ -110,23 +166,43 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 3348,
+            "byteLength" : 5652,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
+            "byteLength" : 5652,
+            "byteOffset" : 5652
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3768,
+            "byteOffset" : 11304
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3750,
+            "byteOffset" : 15072
+        },
+        {
+            "buffer" : 0,
             "byteLength" : 3348,
-            "byteOffset" : 3348
+            "byteOffset" : 18824
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3348,
+            "byteOffset" : 22172
         },
         {
             "buffer" : 0,
             "byteLength" : 2232,
-            "byteOffset" : 6696
+            "byteOffset" : 25520
         },
         {
             "buffer" : 0,
             "byteLength" : 1656,
-            "byteOffset" : 8928
+            "byteOffset" : 27752
         }
     ],
     "samplers" : [
@@ -137,7 +213,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 10584,
+            "byteLength" : 29408,
             "uri" : "plant_tomato_S3.bin"
         }
     ]

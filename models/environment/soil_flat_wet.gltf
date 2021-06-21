@@ -58,7 +58,7 @@
         },
         {
             "alphaMode" : "BLEND",
-            "name" : "Soil_Wet.001",
+            "name" : "Soil_Wet",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 2,

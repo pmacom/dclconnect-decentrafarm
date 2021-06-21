@@ -8,13 +8,25 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
+            "name" : "plant_pumpkin_S4_crop",
+            "translation" : [
+                0,
+                -2.712011155381333e-05,
+                0
+            ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "mesh" : 1,
             "name" : "plant_pumpkin_S4",
             "rotation" : [
                 0.7071068286895752,
@@ -31,8 +43,9 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
-            "name" : "Plant_Pumpkin.004",
+            "name" : "Plant_Pumpkin",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
@@ -44,7 +57,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Scene",
+            "name" : "Scene.001",
             "primitives" : [
                 {
                     "attributes" : {
@@ -53,6 +66,20 @@
                         "TEXCOORD_0" : 2
                     },
                     "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Scene",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
                     "material" : 0
                 }
             ]
@@ -75,6 +102,40 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
+            "count" : 477,
+            "max" : [
+                19.426137924194336,
+                99.54927062988281,
+                2.7423698902130127
+            ],
+            "min" : [
+                -25.616498947143555,
+                27.178874969482422,
+                -26.582258224487305
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 477,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 477,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2151,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
             "count" : 278,
             "max" : [
                 26.51393699645996,
@@ -89,19 +150,19 @@
             "type" : "VEC3"
         },
         {
-            "bufferView" : 1,
+            "bufferView" : 5,
             "componentType" : 5126,
             "count" : 278,
             "type" : "VEC3"
         },
         {
-            "bufferView" : 2,
+            "bufferView" : 6,
             "componentType" : 5126,
             "count" : 278,
             "type" : "VEC2"
         },
         {
-            "bufferView" : 3,
+            "bufferView" : 7,
             "componentType" : 5123,
             "count" : 936,
             "type" : "SCALAR"
@@ -110,23 +171,43 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 3336,
+            "byteLength" : 5724,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
+            "byteLength" : 5724,
+            "byteOffset" : 5724
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3816,
+            "byteOffset" : 11448
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4302,
+            "byteOffset" : 15264
+        },
+        {
+            "buffer" : 0,
             "byteLength" : 3336,
-            "byteOffset" : 3336
+            "byteOffset" : 19568
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3336,
+            "byteOffset" : 22904
         },
         {
             "buffer" : 0,
             "byteLength" : 2224,
-            "byteOffset" : 6672
+            "byteOffset" : 26240
         },
         {
             "buffer" : 0,
             "byteLength" : 1872,
-            "byteOffset" : 8896
+            "byteOffset" : 28464
         }
     ],
     "samplers" : [
@@ -137,7 +218,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 10768,
+            "byteLength" : 30336,
             "uri" : "plant_pumpkin_S4.bin"
         }
     ]

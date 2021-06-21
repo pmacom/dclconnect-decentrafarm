@@ -1,4 +1,4 @@
-import { BoxHighlight } from "src/items/boxHighlight"
+import { BoxHighlight } from "src/elements/highlight/boxHighlight"
 import { state } from "src/state"
 
 export abstract class InteractibleEntity extends Entity {

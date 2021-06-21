@@ -28,9 +28,9 @@
                 0.009999999776482582
             ],
             "translation" : [
-                7.809998512268066,
-                0.3773263096809387,
-                -7.706851005554199
+                0,
+                0.04496055841445923,
+                0
             ]
         }
     ],
@@ -81,7 +81,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 149,
+            "count" : 155,
             "max" : [
                 10.153339385986328,
                 10.153349876403809,
@@ -97,13 +97,13 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 149,
+            "count" : 155,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 149,
+            "count" : 155,
             "type" : "VEC2"
         },
         {
@@ -116,23 +116,23 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1788,
+            "byteLength" : 1860,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1788,
-            "byteOffset" : 1788
+            "byteLength" : 1860,
+            "byteOffset" : 1860
         },
         {
             "buffer" : 0,
-            "byteLength" : 1192,
-            "byteOffset" : 3576
+            "byteLength" : 1240,
+            "byteOffset" : 3720
         },
         {
             "buffer" : 0,
             "byteLength" : 528,
-            "byteOffset" : 4768
+            "byteOffset" : 4960
         }
     ],
     "samplers" : [
@@ -143,7 +143,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 5296,
+            "byteLength" : 5488,
             "uri" : "fencepost.bin"
         }
     ]
