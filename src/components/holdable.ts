@@ -1,11 +1,17 @@
+import { DynamicImage } from "src/dclconnect-gui/core/dynamicImage"
+import { InspectorImage } from "src/dclconnect-gui/inspector"
 import { highlightDistance } from "src/elements/highlight/boxHighlight"
 import { state } from "src/state"
 import { InteractibleEntity, isInteractible } from "./interactible"
+
+const guiInspector = new InspectorImage()
+
 export abstract class HoldableEntity extends Entity {
     public abstract holdingPosition: Vector3
     public abstract holdingRotation: Quaternion
     public readonly class: string = 'HoldableEntity'
     public readonly interactions: Array<string> = []
+    public abstract spriteIndex: number
 
     constructor() {
         super()
@@ -29,6 +35,7 @@ export abstract class HoldableEntity extends Entity {
         log('Picking Up')
         state.isHolding = true
         state.isHoldingEntityName = this.uuid
+        guiInspector.showImageIndex(this.spriteIndex)
         this.setParent(Attachable.FIRST_PERSON_CAMERA)
         this.getComponentOrCreate(Transform).position = this.holdingPosition
         this.getComponentOrCreate(Transform).rotation = this.holdingRotation
@@ -39,6 +46,7 @@ export abstract class HoldableEntity extends Entity {
         let transform = this.getComponent(Transform)
         state.isHolding = false
         state.isHoldingEntityName = null
+        guiInspector.showImageIndex(0)
         transform.position = position
         transform.rotation = new Quaternion()
         this.setParent(null)
