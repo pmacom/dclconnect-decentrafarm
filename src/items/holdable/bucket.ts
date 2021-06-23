@@ -8,6 +8,8 @@ export class ItemBucket extends HoldableEntity {
     public holdingRotation: Quaternion = new Quaternion().setEuler(90, 90, 90)
     public interactions: Array<string> = ["fillable"]
     public spriteIndex: number = 0
+    public GUIName: string = "Bucket"
+    public metadata = { }
 
     constructor(
         transform: Transform

@@ -20,7 +20,6 @@ export abstract class Seeds extends HoldableEntity {
     public abstract seedTypeName: string
     public abstract entityReference: Entity
     public abstract modelReference: GLTFShape
-    public abstract amount: number
     private initialized: boolean = false
 
     constructor() {
@@ -53,7 +52,8 @@ export class SeedsEntityCabbage extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_cabbage.gltf')
     public seedTypeName: string = "cabbage"
     public spriteIndex: number = 7
-    public amount = 5
+    public GUIName: string = "Cabbage Seeds"
+    public metadata = { amount: 5 }
 }
 
 export class SeedsEntityCarrot extends Seeds {
@@ -61,7 +61,8 @@ export class SeedsEntityCarrot extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_carrot.gltf')
     public seedTypeName: string = "carrot"
     public spriteIndex: number = 6
-    public amount = 5
+    public GUIName: string = "Carrot Seeds"
+    public metadata = { amount: 5 }
 }
 
 export class SeedsEntityCucumber extends Seeds {
@@ -69,7 +70,8 @@ export class SeedsEntityCucumber extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_cucumber.gltf')
     public seedTypeName: string = "cucumber"
     public spriteIndex: number = 5
-    public amount = 5
+    public GUIName: string = "Cucumber Seeds"
+    public metadata = { amount: 5 }
 }
 
 export class SeedsEntityOnion extends Seeds {
@@ -77,7 +79,8 @@ export class SeedsEntityOnion extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_onion.gltf')
     public seedTypeName: string = "onion"
     public spriteIndex: number = 4
-    public amount = 5
+    public GUIName: string = "Onion Seeds"
+    public metadata = { amount: 5 }
 }
 
 export class SeedsEntityPotato extends Seeds {
@@ -85,7 +88,8 @@ export class SeedsEntityPotato extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_potato.gltf')
     public seedTypeName: string = "potato"
     public spriteIndex: number = 3
-    public amount = 5
+    public GUIName: string = "Potato Seeds"
+    public metadata = { amount: 5 }
 }
 
 export class SeedsEntityPumpkin extends Seeds {
@@ -93,7 +97,8 @@ export class SeedsEntityPumpkin extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_pumpkin.gltf')
     public seedTypeName: string = "pumpkin"
     public spriteIndex: number = 2
-    public amount = 5
+    public GUIName: string = "Pumpkin Seeds"
+    public metadata = { amount: 5 }
 }
 
 export class SeedsEntityTomato extends Seeds {
@@ -101,5 +106,6 @@ export class SeedsEntityTomato extends Seeds {
     public modelReference: GLTFShape = new GLTFShape('models/seeds/seed_tomato.gltf')
     public seedTypeName: string = "tomato"
     public spriteIndex: number = 1
-    public amount = 5
+    public GUIName: string = "Tomato Seeds"
+    public metadata = { amount: 5 }
 }

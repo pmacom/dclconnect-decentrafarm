@@ -9,6 +9,8 @@ export class WateringCan extends HoldableEntity {
     public holdingPosition: Vector3 = new Vector3(.3,-.4,.5)
     public holdingRotation: Quaternion = new Quaternion().setEuler(0,35,0)
     public spriteIndex: number = 0
+    public GUIName: string = "Watering Can"
+    public metadata = { }
 
     constructor(
         transform: Transform

@@ -6,12 +6,17 @@ import { InteractibleEntity, isInteractible } from "./interactible"
 
 const guiInspector = new InspectorImage()
 
+interface HoldableMetaData {
+    [key: string]: any
+ } 
 export abstract class HoldableEntity extends Entity {
     public abstract holdingPosition: Vector3
     public abstract holdingRotation: Quaternion
     public readonly class: string = 'HoldableEntity'
     public readonly interactions: Array<string> = []
     public abstract spriteIndex: number
+    public abstract GUIName: string
+    public abstract metadata: HoldableMetaData
 
     constructor() {
         super()
@@ -24,7 +29,7 @@ export abstract class HoldableEntity extends Entity {
               {
                 button: ActionButton.PRIMARY,
                 showFeedback: true,
-                hoverText: "Pick Up",
+                hoverText: "Pick Up!!!",
                 distance: 3
               }
             )
@@ -36,6 +41,10 @@ export abstract class HoldableEntity extends Entity {
         state.isHolding = true
         state.isHoldingEntityName = this.uuid
         guiInspector.showImageIndex(this.spriteIndex)
+        guiInspector.setItemName(this.GUIName)
+        if(this.metadata.amount){
+            guiInspector.showCount(this.metadata.amount)
+        }
         this.setParent(Attachable.FIRST_PERSON_CAMERA)
         this.getComponentOrCreate(Transform).position = this.holdingPosition
         this.getComponentOrCreate(Transform).rotation = this.holdingRotation
@@ -47,6 +56,8 @@ export abstract class HoldableEntity extends Entity {
         state.isHolding = false
         state.isHoldingEntityName = null
         guiInspector.showImageIndex(0)
+        guiInspector.setItemName('')
+        guiInspector.hideCount()
         transform.position = position
         transform.rotation = new Quaternion()
         this.setParent(null)
