@@ -10,9 +10,10 @@ import {
     PlantEntityPumpkin,
     PlantEntityTomato,
 } from "../../elements/plant/plant";
-import { GUIItemImage } from "src/dclconnect-gui/assets/inspector";
+import { guiInspectorImage, GUIItemImage } from "src/dclconnect-gui/assets/inspector";
 import { DynamicImage } from "src/dclconnect-gui/core/dynamicImage";
 import { InspectorGUI } from "src/dclconnect-gui/inspector";
+import { RandomPlantSeedSound } from "src/dclconnect-gui/sound";
 
 export abstract class Seeds extends HoldableEntity {
     public interactions: Array<string> = ["plantable"]
@@ -44,8 +45,14 @@ export abstract class Seeds extends HoldableEntity {
 
     useItem(target: InteractibleEntity) {
         let t = target as DirtSpot
+        RandomPlantSeedSound.get().playAudioOnceAtPosition(t.getComponent(Transform).position)
         if(this.metadata.amount > 0){
             t.plant(this.seedTypeName, 1)
+            this.metadata.amount--
+            if(this.metadata.amount <= 0){
+                this.destroy()
+                InspectorGUI.clearEntity()
+            }
         }
     }
 }

@@ -219,5 +219,6 @@ export class DynamicImage implements ISystem{
         }else{
             this.disable()
         }
+        log('updating a gui element')
     }
 }

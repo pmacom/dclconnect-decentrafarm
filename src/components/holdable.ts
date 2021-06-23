@@ -6,9 +6,9 @@ import { InteractibleEntity, isInteractible } from "./interactible"
 
 const guiInspector = new InspectorImage()
 
-interface HoldableMetaData {
+export interface HoldableMetaData {
     [key: string]: any
- } 
+} 
 export abstract class HoldableEntity extends Entity {
     public abstract holdingPosition: Vector3
     public abstract holdingRotation: Quaternion
@@ -29,7 +29,7 @@ export abstract class HoldableEntity extends Entity {
               {
                 button: ActionButton.PRIMARY,
                 showFeedback: true,
-                hoverText: "Pick Up!!!",
+                hoverText: `Pick Up`,
                 distance: 3
               }
             )
@@ -40,11 +40,7 @@ export abstract class HoldableEntity extends Entity {
         log('Picking Up')
         state.isHolding = true
         state.isHoldingEntityName = this.uuid
-        guiInspector.showImageIndex(this.spriteIndex)
-        guiInspector.setItemName(this.GUIName)
-        if(this.metadata.amount){
-            guiInspector.showCount(this.metadata.amount)
-        }
+        guiInspector.setEntity(this)
         this.setParent(Attachable.FIRST_PERSON_CAMERA)
         this.getComponentOrCreate(Transform).position = this.holdingPosition
         this.getComponentOrCreate(Transform).rotation = this.holdingRotation
@@ -55,7 +51,7 @@ export abstract class HoldableEntity extends Entity {
         let transform = this.getComponent(Transform)
         state.isHolding = false
         state.isHoldingEntityName = null
-        guiInspector.clear()
+        guiInspector.clearEntity()
         transform.position = position
         transform.rotation = new Quaternion()
         this.setParent(null)
@@ -64,6 +60,7 @@ export abstract class HoldableEntity extends Entity {
     destroy(){
         state.isHolding = false
         state.isHoldingEntityName = null
+        engine.removeEntity(this)
     }
 
     public abstract useItem(target: InteractibleEntity): void
