@@ -128,6 +128,10 @@ export class InspectorImage {
         this.guiItemIcon.moveSourceTo(new Vector2(x*90,y*90), 0)
     }
 
+    hideImage() {
+        this.showImageIndex(0)
+    }
+
     showCount(amount: number) {
         this.itemAmount.value = amount.toString()
         this.itemAmount.visible = true
@@ -142,6 +146,16 @@ export class InspectorImage {
 
     setItemName(name: string) {
         this.itemName.value = name
+    }
+
+    hideItemName() {
+        this.itemName.value = ""
+    }
+
+    clear() {
+        this.hideCount()
+        this.hideImage()
+        this.hideItemName()
     }
 }
 

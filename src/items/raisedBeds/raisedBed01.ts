@@ -6,15 +6,25 @@ interface IPlotData {
     isWet: boolean
 }
 
-let stage = 3
+let stage = 0
+// let plotData: Array<IPlotData> = [
+//     { plantType: "cabbage", stage: stage, isWet: false },
+//     { plantType: "carrot", stage: stage, isWet: false },
+//     { plantType: "cucumber", stage: stage, isWet: false },
+//     { plantType: "onion", stage: stage, isWet: true },
+//     { plantType: "potato", stage: stage, isWet: true },
+//     { plantType: "pumpkin", stage: stage, isWet: false },
+//     { plantType: "tomato", stage: stage, isWet: false },
+//     { plantType: null, stage: stage, isWet: false }
+// ]
 let plotData: Array<IPlotData> = [
-    { plantType: "cabbage", stage: stage, isWet: false },
-    { plantType: "carrot", stage: stage, isWet: false },
-    { plantType: "cucumber", stage: stage, isWet: false },
-    { plantType: "onion", stage: stage, isWet: true },
-    { plantType: "potato", stage: stage, isWet: true },
-    { plantType: "pumpkin", stage: stage, isWet: false },
-    { plantType: "tomato", stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
+    { plantType: null, stage: stage, isWet: false },
     { plantType: null, stage: stage, isWet: false }
 ]
 

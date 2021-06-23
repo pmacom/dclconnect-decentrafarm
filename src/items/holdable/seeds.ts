@@ -12,6 +12,7 @@ import {
 } from "../../elements/plant/plant";
 import { GUIItemImage } from "src/dclconnect-gui/assets/inspector";
 import { DynamicImage } from "src/dclconnect-gui/core/dynamicImage";
+import { InspectorGUI } from "src/dclconnect-gui/inspector";
 
 export abstract class Seeds extends HoldableEntity {
     public interactions: Array<string> = ["plantable"]
@@ -43,7 +44,9 @@ export abstract class Seeds extends HoldableEntity {
 
     useItem(target: InteractibleEntity) {
         let t = target as DirtSpot
-        t.plant(this.seedTypeName, 1)
+        if(this.metadata.amount > 0){
+            t.plant(this.seedTypeName, 1)
+        }
     }
 }
 

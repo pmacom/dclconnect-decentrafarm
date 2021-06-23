@@ -55,12 +55,15 @@ export abstract class HoldableEntity extends Entity {
         let transform = this.getComponent(Transform)
         state.isHolding = false
         state.isHoldingEntityName = null
-        guiInspector.showImageIndex(0)
-        guiInspector.setItemName('')
-        guiInspector.hideCount()
+        guiInspector.clear()
         transform.position = position
         transform.rotation = new Quaternion()
         this.setParent(null)
+    }
+
+    destroy(){
+        state.isHolding = false
+        state.isHoldingEntityName = null
     }
 
     public abstract useItem(target: InteractibleEntity): void
