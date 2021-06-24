@@ -1,0 +1,179 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                2
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Trunk",
+            "translation" : [
+                0,
+                1.4475777788902633e-05,
+                88.85173034667969
+            ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "OldFantasyTree_Trunk",
+            "translation" : [
+                -18.447351455688477,
+                -28.2041072845459,
+                -220.34654235839844
+            ]
+        },
+        {
+            "children" : [
+                1
+            ],
+            "name" : "OldFantasyTree10",
+            "rotation" : [
+                0.262054979801178,
+                0.6567549705505371,
+                -0.6567550897598267,
+                0.2620549499988556
+            ],
+            "scale" : [
+                0.01000000350177288,
+                0.01000000350177288,
+                0.009999999776482582
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Trunk10Mat",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Scene",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "NormalMap_Texture",
+            "uri" : "textures/NormalMap_Texture.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "DiffuseColor_Texture-wisdomTree-diffuse",
+            "uri" : "textures/DiffuseColor_Texture-wisdomTree-diffuse.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 881,
+            "max" : [
+                440.0619812011719,
+                339.4794616699219,
+                154.12086486816406
+            ],
+            "min" : [
+                -256.47613525390625,
+                -399.86126708984375,
+                -784.5623779296875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 881,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 881,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2961,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 10572,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10572,
+            "byteOffset" : 10572
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7048,
+            "byteOffset" : 21144
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5922,
+            "byteOffset" : 28192
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9986
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 34116,
+            "uri" : "tree.bin"
+        }
+    ]
+}

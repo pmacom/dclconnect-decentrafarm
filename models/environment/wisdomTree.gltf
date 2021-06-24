@@ -1,0 +1,256 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.4.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                2,
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Trunk",
+            "translation" : [
+                92.29891204833984,
+                97.24418640136719,
+                184.80633544921875
+            ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "OldFantasyTree_Trunk",
+            "translation" : [
+                -18.447351455688477,
+                -28.2041072845459,
+                -220.34654235839844
+            ]
+        },
+        {
+            "children" : [
+                1
+            ],
+            "name" : "OldFantasyTree10",
+            "rotation" : [
+                0.262054979801178,
+                0.6567549705505371,
+                -0.6567550897598267,
+                0.2620549499988556
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.01000000350177288,
+                0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Cube_collider",
+            "translation" : [
+                0,
+                0.983690619468689,
+                -1.1632237434387207
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Trunk10Mat",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Scene",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "wisdomTree-normal",
+            "uri" : "textures/wisdomTree-normal.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "wisdomTree-diffuse",
+            "uri" : "textures/wisdomTree-diffuse.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 881,
+            "max" : [
+                440.0619812011719,
+                339.4794616699219,
+                154.12086486816406
+            ],
+            "min" : [
+                -256.47613525390625,
+                -399.86126708984375,
+                -784.5623779296875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 881,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 881,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2961,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                1.1759642362594604,
+                4.673940658569336,
+                1.2776591777801514
+            ],
+            "min" : [
+                -2.6633107662200928,
+                -1,
+                -2.2955245971679688
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 10572,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10572,
+            "byteOffset" : 10572
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 7048,
+            "byteOffset" : 21144
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5922,
+            "byteOffset" : 28192
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 34116
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 34404
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 192,
+            "byteOffset" : 34692
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 34884
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9986
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 34956,
+            "uri" : "wisdomTree.bin"
+        }
+    ]
+}
