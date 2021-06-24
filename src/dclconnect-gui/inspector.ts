@@ -2,12 +2,11 @@ import { HoldableEntity, HoldableMetaData } from "src/components/holdable"
 import { canvas } from "./core/canvas"
 import { DynamicImage } from "./core/dynamicImage"
 
-
 export const GUIInspectorTexture = new Texture("images/gui/gui-inspector-sprite.png")
 export const GUIInspectorSpriteTexture = new Texture("images/icon-sprite-sheet.png")
 
 let alignment = "left"
-let offsetX = 0
+let offsetX = 300
 let offsetY = -20
 
 export const GUIInspectorFrame = () : DynamicImage => {
