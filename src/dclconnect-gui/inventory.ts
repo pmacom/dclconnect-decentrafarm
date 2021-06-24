@@ -64,22 +64,17 @@ class InventoryImage implements ISystem {
     public icons : Array<GUIImageIcon | null> = []
 
     constructor() {
-        // this.inventoryBackground = GUIInventoryBackground()
         this.inventoryFrame = GUIInventoryFrame()
-        // this.inventoryBackground.image.onClick = new OnClick(() => {
-        //     this.hide()
-        // })
-        this.show()
+        this.hide()
         this.items.forEach((item, index) => {
-            log('making an item or something')
-            let x = (index % 5)*49
-            let y = Math.floor((index/5)) * 47
+            let xOffset = (index % 5)*49
+            let yOffset = Math.floor((index/5)) * 47
             this.icons[index] = new GUIImageIcon(
                 44, 44,
-                -190 + x, 73 - y,
+                -190 + xOffset, 73 - yOffset,
                 "center", "center"
             )
-            this.icons[index]?.setImageIndex(2)
+            this.icons[index]?.setImageIndex(0)
         })
     }
 
@@ -94,7 +89,6 @@ class InventoryImage implements ISystem {
     }
 
     hide(){
-        this.inventoryBackground.hide()
         this.inventoryFrame.hide()
     }
 

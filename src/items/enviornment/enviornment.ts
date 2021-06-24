@@ -2,6 +2,7 @@ import { House } from "./house/house"
 import { Grass } from "./grass/grass"
 import { Fences } from "./fence/fence"
 import { Toolbox } from "./toolbox/toolbox"
+import { StorageBin } from "./storageBin/storageBin"
 
 export class Enviornment extends Entity {
     constructor(){
@@ -18,6 +19,11 @@ export class Enviornment extends Entity {
             position: new Vector3(-10,0,7.7),
             rotation: new Quaternion().setEuler(0,0,0)
         }))
+
+        // const storageBin = new StorageBin(new Transform({
+        //     position: new Vector3(-7,0,8.7),
+        //     rotation: new Quaternion().setEuler(0,0,0)
+        // }))
 
         const grass = new Grass()
         engine.addEntity(this)
