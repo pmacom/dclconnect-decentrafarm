@@ -124,9 +124,9 @@
             "uri" : "textures/wisdomTree-normal.jpg"
         },
         {
-            "mimeType" : "image/png",
+            "mimeType" : "image/jpeg",
             "name" : "wisdomTree-diffuse",
-            "uri" : "textures/wisdomTree-diffuse.png"
+            "uri" : "textures/wisdomTree-diffuse.jpg"
         }
     ],
     "accessors" : [
